@@ -439,3 +439,6 @@ footer a{ color: var(--text); text-decoration: underline; text-underline-offset:
   .sticky-cta{ display:flex; }
   :root{ --navH: 66px; }
 }
+
+/* Guía: solo formulario (sin descarga) */
+.guia-solo-form .grid2 { grid-template-columns: 1fr !important; }
