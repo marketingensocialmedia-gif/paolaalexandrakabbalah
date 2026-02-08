@@ -28,24 +28,24 @@ window.SITE_CONFIG = {
   },
   "STRIPE_LINKS": {
     "kit": {
-      "EUR": "https://buy.stripe.com/price_1SycHWKgWKbCENWgDtt2vqrr",
-      "USD": "https://buy.stripe.com/price_1SycHWKgWKbCENWgDtt2vqrr",
-      "MXN": "https://buy.stripe.com/price_1SycHWKgWKbCENWgDtt2vqrr"
+      "EUR": "https://buy.stripe.com/eVq6oI8T1gKB98pdfy28800",
+      "USD": "https://buy.stripe.com/4gM14o3yHculesJ3EY28801",
+      "MXN": "https://buy.stripe.com/4gM14o3yHculesJ3EY28801"
     },
     "basic": {
-      "EUR": "https://buy.stripe.com/prod_TwVM9f1mHSb2lq",
-      "USD": "https://buy.stripe.com/prod_TwVM9f1mHSb2lq",
-      "MXN": "https://buy.stripe.com/prod_TwVM9f1mHSb2lq"
+      "EUR": "https://buy.stripe.com/5kQbJ20mveCt4S91wQ28802",
+      "USD": "https://buy.stripe.com/5kQbJ20mveCt4S91wQ28802",
+      "MXN": "https://buy.stripe.com/5kQbJ20mveCt4S91wQ28802"
     },
     "pro": {
-      "EUR": "https://buy.stripe.com/prod_TwVPjwLj3aP6cp",
-      "USD": "https://buy.stripe.com/prod_TwVPjwLj3aP6cp",
-      "MXN": "https://buy.stripe.com/prod_TwVPjwLj3aP6cp"
+      "EUR": "https://buy.stripe.com/6oU5kE2uD65XckB1wQ28803",
+      "USD": "https://buy.stripe.com/6oU5kE2uD65XckB1wQ28803",
+      "MXN": "https://buy.stripe.com/6oU5kE2uD65XckB1wQ28803"
     },
     "premium": {
-      "EUR": "https://buy.stripe.com/prod_TwVU4stzDibv5j",
-      "USD": "https://buy.stripe.com/prod_TwVU4stzDibv5j",
-      "MXN": "https://buy.stripe.com/prod_TwVU4stzDibv5j"
+      "EUR": "https://buy.stripe.com/4gM14o3yHculesJ3EY28801",
+      "USD": "https://buy.stripe.com/4gM14o3yHculesJ3EY28801",
+      "MXN": "https://buy.stripe.com/4gM14o3yHculesJ3EY28801"
     },
     "guia": {
       "EUR": "",
