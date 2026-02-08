@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+  <defs>
+    <radialGradient id="r1" cx="30%" cy="25%" r="75%">
+      <stop offset="0" stop-color="#12B3FF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#12B3FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="r2" cx="80%" cy="40%" r="75%">
+      <stop offset="0" stop-color="#19E6C0" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#19E6C0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="r3" cx="55%" cy="95%" r="85%">
+      <stop offset="0" stop-color="#38F28D" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#38F28D" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="900" rx="72" fill="#FFFFFF" fill-opacity="0.65"/>
+  <rect width="900" height="900" rx="72" fill="url(#r1)"/>
+  <rect width="900" height="900" rx="72" fill="url(#r2)"/>
+  <rect width="900" height="900" rx="72" fill="url(#r3)"/>
+  <circle cx="450" cy="360" r="150" fill="#0B7CFF" fill-opacity="0.10"/>
+  <path d="M292 664c28-104 118-176 220-176s192 72 220 176" fill="#0B7CFF" fill-opacity="0.10"/>
+  <text x="450" y="820" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-size="28" fill="#0C121E" fill-opacity="0.72">Reemplaza con tu foto: assets/img/paola.jpg</text>
+</svg>
