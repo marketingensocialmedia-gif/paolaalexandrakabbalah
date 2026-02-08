@@ -29,8 +29,8 @@ window.SITE_CONFIG = {
   "STRIPE_LINKS": {
     "kit": {
       "EUR": "https://buy.stripe.com/eVq6oI8T1gKB98pdfy28800",
-      "USD": "https://buy.stripe.com/4gM14o3yHculesJ3EY28801",
-      "MXN": "https://buy.stripe.com/4gM14o3yHculesJ3EY28801"
+      "USD": "https://buy.stripe.com/eVq6oI8T1gKB98pdfy28800",
+      "MXN": "https://buy.stripe.com/eVq6oI8T1gKB98pdfy28800"
     },
     "basic": {
       "EUR": "https://buy.stripe.com/5kQbJ20mveCt4S91wQ28802",
