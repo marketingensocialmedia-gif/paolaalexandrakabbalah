@@ -6,46 +6,46 @@ window.SITE_CONFIG = {
   "GUIDE_LEAD_WEBHOOK_URL": "https://aisimona.app.n8n.cloud/webhook/guia-kabbalah",
   "PRICES": {
     "kit": {
-      "EUR": 39,
-      "USD": 49,
-      "MXN": 799
+      "EUR": "39",
+      "USD": "46.08",
+      "MXN": "795.62"
     },
     "basic": {
-      "EUR": 149,
-      "USD": 199,
-      "MXN": 3499
+      "EUR": "149",
+      "USD": "176.06",
+      "MXN": "3039.70",
     },
     "pro": {
-      "EUR": 249,
-      "USD": 299,
-      "MXN": 5499
+      "EUR": "249",
+      "USD": "294.23",
+      "MXN": "5079.77"
     },
     "premium": {
-      "EUR": 399,
-      "USD": 499,
-      "MXN": 8999
+      "EUR": "399",
+      "USD": "471.48",
+      "MXN": "8139.87"
     }
   },
   "STRIPE_LINKS": {
     "kit": {
-      "EUR": "",
-      "USD": "",
-      "MXN": ""
+      "EUR": "https://buy.stripe.com/price_1SycHWKgWKbCENWgDtt2vqrr",
+      "USD": "https://buy.stripe.com/price_1SycHWKgWKbCENWgDtt2vqrr",
+      "MXN": "https://buy.stripe.com/price_1SycHWKgWKbCENWgDtt2vqrr"
     },
     "basic": {
-      "EUR": "",
-      "USD": "",
-      "MXN": ""
+      "EUR": "https://buy.stripe.com/prod_TwVM9f1mHSb2lq",
+      "USD": "https://buy.stripe.com/prod_TwVM9f1mHSb2lq",
+      "MXN": "https://buy.stripe.com/prod_TwVM9f1mHSb2lq"
     },
     "pro": {
-      "EUR": "",
-      "USD": "",
-      "MXN": ""
+      "EUR": "https://buy.stripe.com/prod_TwVPjwLj3aP6cp",
+      "USD": "https://buy.stripe.com/prod_TwVPjwLj3aP6cp",
+      "MXN": "https://buy.stripe.com/prod_TwVPjwLj3aP6cp"
     },
     "premium": {
-      "EUR": "",
-      "USD": "",
-      "MXN": ""
+      "EUR": "https://buy.stripe.com/prod_TwVU4stzDibv5j",
+      "USD": "https://buy.stripe.com/prod_TwVU4stzDibv5j",
+      "MXN": "https://buy.stripe.com/prod_TwVU4stzDibv5j"
     },
     "guia": {
       "EUR": "",
