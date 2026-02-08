@@ -3,7 +3,7 @@ window.SITE_CONFIG = {
   "SITE_URL": "https://marketingensocialmedia-gif.github.io/paolaalexandrakabbalah",
   "BASE_PATH": "/paolaalexandrakabbalah",
   "SUPPORT_EMAIL": "alexandra.kabbalah@outlook.com",
-  "GUIDE_LEAD_WEBHOOK_URL": "https://YOUR-N8N-WEBHOOK-HERE",
+  "GUIDE_LEAD_WEBHOOK_URL": "https://aisimona.app.n8n.cloud/webhook/guia-kabbalah",
   "PRICES": {
     "kit": {
       "EUR": 39,
