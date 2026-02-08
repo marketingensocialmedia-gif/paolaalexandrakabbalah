@@ -441,4 +441,12 @@ footer a{ color: var(--text); text-decoration: underline; text-underline-offset:
 }
 
 /* Guía: solo formulario (sin descarga) */
-.guia-solo-form .grid2 { grid-template-columns: 1fr !important; }
+.guia-solo-form .grid2{
+  grid-template-columns: 1fr !important;
+  justify-items: center;
+}
+
+.guia-solo-form .grid2 > .card{
+  width: 100%;
+  max-width: 820px;
+}
