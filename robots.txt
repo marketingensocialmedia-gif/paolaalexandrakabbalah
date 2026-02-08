@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://marketingensocialmedia-gif.github.io/paolaalexandrakabbalah/sitemap.xml
