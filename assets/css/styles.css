@@ -451,17 +451,36 @@ footer a{ color: var(--text); text-decoration: underline; text-underline-offset:
   max-width: 820px;
 }
 
+/* =========================
+   Blessing (RIGHT HERO) — FINAL
+   ========================= */
+
+/* This is what was keeping it “in the middle” */
 .hero-visual--blessing{
   padding: 28px;
   display:flex;
   flex-direction:column;
-  justify-content:center;
+
+  /* BEFORE: justify-content:center;  (that centers vertically) */
+  justify-content:flex-start;
+
+  /* Make content align like the rest of the site */
+  align-items: stretch;
+
   gap:14px;
+
+  /* Make sure the flex container actually has height so we can push caption down */
+  min-height: 560px;
 }
 
+/* Card should align LEFT in the hero (not centered) */
 .blessing-card{
-  width:min(560px, 100%);
-  margin:0 auto;
+  width: 100%;
+  max-width: 560px;
+
+  /* BEFORE: margin:0 auto;  (that centers it) */
+  margin: 0;
+
   padding:22px 22px 18px;
   border-radius:26px;
   border:1px solid rgba(18,179,255,.20);
@@ -471,60 +490,50 @@ footer a{ color: var(--text); text-decoration: underline; text-underline-offset:
     rgba(255,255,255,.62);
   backdrop-filter: blur(12px);
   box-shadow: var(--shadow2);
+
+  /* Force normal reading alignment */
+  text-align: left;
 }
 
 .blessing-title{
   font-weight:950;
   font-size:16px;
-  margin-bottom:10px;
+  margin: 0 0 10px;
   color: var(--text);
+  text-align: left;
 }
 
+/* If your HTML uses UL */
 .blessing-list{
   margin:0;
-  padding-left:18px;
+  padding:0;
+  list-style:none;          /* no bullets */
   display:grid;
   gap:10px;
 }
-
 .blessing-list li{
   color: var(--muted);
   font-size:15px;
   line-height:1.6;
+  text-align:left;
 }
 
-.blessing-cta{
-  margin-top:12px;
-  font-weight:900;
-  color: var(--text);
-  font-size:14.5px;
-  line-height:1.5;
-}
-
-.blessing-caption{
-  width:min(420px, 100%);
-  margin:0 auto;
-  text-align:center;
-  color: var(--muted2);
-  font-size:12.5px;
-  line-height:1.45;
-}
-
-/* quitar bullets: nuevo bloque */
+/* If your HTML uses paragraphs instead */
 .blessing-lines{
   margin-top: 6px;
   display: grid;
   gap: 10px;
+  text-align:left;
 }
-
 .blessing-lines p{
   margin: 0;
   color: var(--muted);
   font-size: 15px;
   line-height: 1.6;
+  text-align:left;
 }
 
-/* centra el CTA en negritas */
+/* Keep only this centered (the bold CTA line) */
 .blessing-cta{
   margin-top: 14px;
   font-weight: 950;
@@ -534,40 +543,12 @@ footer a{ color: var(--text); text-decoration: underline; text-underline-offset:
   text-align: center;
 }
 
-/* (opcional) también centra el título */
-.blessing-title{
-  font-weight: 950;
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: var(--text);
-  text-align: center;
-}
-
-/* ==== FIX: stop global centering (keep only what you want centered) ==== */
-
-/* Force left align for main content blocks */
-.page, .container, .section, .card, .content, .hero, .about, .products {
-  text-align: left;
-}
-
-/* Keep the CTA centered if you want */
-.blessing-cta {
-  text-align: center;
-}
-
-/* BUT make the blessing title/paragraphs left-aligned (if that’s what you want) */
-.blessing-title,
-.blessing-lines,
-.blessing-lines p {
-  text-align: left;
-}
-
-/* If your cards are centered because of flex */
-.card {
-  align-items: flex-start;
-}
-
-/* el caption ya está centrado, pero por si acaso */
+/* Caption stays at the bottom of the hero */
 .blessing-caption{
-  text-align: center;
+  width:min(420px, 100%);
+  margin-top: auto;         /* pushes it down */
+  text-align:center;
+  color: var(--muted2);
+  font-size:12.5px;
+  line-height:1.45;
 }
