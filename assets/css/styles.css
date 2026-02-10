@@ -552,3 +552,43 @@ footer a{ color: var(--text); text-decoration: underline; text-underline-offset:
   font-size:12.5px;
   line-height:1.45;
 }
+
+/* ==== FINAL OVERRIDE: Center EVERYTHING in the blessing block ==== */
+
+.hero-visual--blessing{
+  display:flex;
+  flex-direction:column;
+  align-items:center;        /* centers the card + caption horizontally */
+  justify-content:flex-start;/* keep near top; change to center if you want */
+  min-height:560px;
+}
+
+/* center the card itself */
+.blessing-card{
+  margin:0 auto;             /* card centered */
+  text-align:center;         /* ALL text inside centered */
+}
+
+/* center all text elements */
+.blessing-title,
+.blessing-lines,
+.blessing-lines p,
+.blessing-list,
+.blessing-list li,
+.blessing-cta{
+  text-align:center !important;
+}
+
+/* make the bottom line centered again */
+.blessing-caption{
+  width:100%;
+  max-width:420px;
+  margin-top:auto;           /* keeps it pushed to the bottom */
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center !important;
+}
+.blessing-caption p{
+  margin:0;
+  text-align:center !important;
+}
