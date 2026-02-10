@@ -1,9 +1,9 @@
-
 (function(){
   const cfg = window.SITE_CONFIG || {};
   const basePath = (typeof cfg.BASE_PATH === "string") ? cfg.BASE_PATH : "";
-  const curKey = "kabbalah_currency";
-  const defaultCurrency = "EUR";
+
+  // ✅ FIXED currency (no selector, no localStorage)
+  const FIXED_CURRENCY = "MXN";
 
   function withBase(path){
     if (!path) return path;
@@ -13,38 +13,24 @@
     return basePath + p;
   }
 
-  function getCurrency(){
-    try{
-      const stored = localStorage.getItem(curKey);
-      if (stored === "EUR" || stored === "USD" || stored === "MXN") return stored;
-    }catch(e){}
-    return defaultCurrency;
+  function formatPrice(value){
+    // MXN-only formatting
+    return "$" + Number(value).toLocaleString("es-MX");
+    // If you want the label, use this instead:
+    // return "$" + Number(value).toLocaleString("es-MX") + " MXN";
   }
 
-  function setCurrency(c){
-    if (!(c === "EUR" || c === "USD" || c === "MXN")) c = defaultCurrency;
-    try{ localStorage.setItem(curKey, c); }catch(e){}
-    document.documentElement.setAttribute("data-currency", c);
-    document.querySelectorAll("[data-currency-btn]").forEach(btn => {
-      const v = btn.getAttribute("data-currency-btn");
-      btn.setAttribute("aria-pressed", String(v === c));
-    });
-    updatePricesAndLinks(c);
-  }
+  function updatePricesAndLinks(){
+    const currency = FIXED_CURRENCY;
 
-  function formatPrice(value, currency){
-    if (currency === "EUR") return "€" + Number(value).toLocaleString("es-ES");
-    if (currency === "USD") return "$" + Number(value).toLocaleString("en-US");
-    if (currency === "MXN") return "$" + Number(value).toLocaleString("es-MX") + " MXN";
-    return String(value);
-  }
+    // useful if you want CSS tweaks later
+    document.documentElement.setAttribute("data-currency", currency);
 
-  function updatePricesAndLinks(currency){
     const prices = (cfg.PRICES || {});
     document.querySelectorAll("[data-price-key]").forEach(el => {
       const key = el.getAttribute("data-price-key");
       const v = prices && prices[key] ? prices[key][currency] : undefined;
-      if (typeof v === "number") el.textContent = formatPrice(v, currency);
+      if (typeof v === "number") el.textContent = formatPrice(v);
     });
 
     const links = (cfg.STRIPE_LINKS || {});
@@ -59,7 +45,7 @@
         a.setAttribute("href", "#");
         a.setAttribute("aria-disabled", "true");
         a.classList.add("disabled");
-        a.setAttribute("title", "Añade tu Stripe Payment Link en assets/js/config.js");
+        a.setAttribute("title", "Add your MXN Stripe link in assets/js/config.js");
       }
     });
 
@@ -74,10 +60,7 @@
     });
   }
 
-  document.querySelectorAll("[data-currency-btn]").forEach(btn=>{
-    btn.addEventListener("click", ()=> setCurrency(btn.getAttribute("data-currency-btn")));
-  });
-
+  // Mobile menu stays the same
   const menuBtn = document.getElementById("menuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
   if (menuBtn && mobileMenu) {
@@ -118,7 +101,7 @@
       const payload = Object.assign({}, data, {
         page: window.location.href,
         ts: new Date().toISOString(),
-        currency: getCurrency()
+        currency: FIXED_CURRENCY
       });
 
       try{
@@ -126,13 +109,13 @@
         if (status){
           status.style.display = "block";
           if (out.ok){
-            status.textContent = "✅ Listo. Revisa tu correo. Si prefieres descarga inmediata, usa el botón de abajo.";
+            status.textContent = "✅ Listo. Revisa tu correo.";
             status.style.borderColor = "rgba(25,230,192,.30)";
           } else if (out.reason === "no_webhook"){
             status.textContent = "⚠️ Aún no conectas n8n. Edita GUIDE_LEAD_WEBHOOK_URL en assets/js/config.js.";
             status.style.borderColor = "rgba(255,80,80,.35)";
           } else {
-            status.textContent = "⚠️ Hubo un error enviando tu solicitud. Intenta de nuevo o escribe a " + (cfg.SUPPORT_EMAIL || "soporte") + ".";
+            status.textContent = "⚠️ Hubo un error. Intenta de nuevo o escribe a " + (cfg.SUPPORT_EMAIL || "soporte") + ".";
             status.style.borderColor = "rgba(255,80,80,.35)";
           }
         }
@@ -148,7 +131,8 @@
     });
   }
 
-  setCurrency(getCurrency());
+  // ✅ Run once: MXN only
+  updatePricesAndLinks();
 
   const yr = document.getElementById("yr");
   if (yr) yr.textContent = String(new Date().getFullYear());
