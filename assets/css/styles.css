@@ -586,3 +586,6 @@ footer a{ color: var(--text); text-decoration: underline; text-underline-offset:
   width: 100% !important;
   text-align: center !important;
 }
+
+.blessing-card--image{ padding:0; overflow:hidden; }
+.blessing-img{ width:100%; height:auto; display:block; border-radius:26px; }
