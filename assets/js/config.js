@@ -6,33 +6,17 @@ window.SITE_CONFIG = {
   GUIDE_LEAD_WEBHOOK_URL: "https://aisimona.app.n8n.cloud/webhook/guia-kabbalah",
 
   PRICES: {
-    kit:     { EUR: 39,  USD: 46.08,  MXN: 795.62 },
-    basic:   { EUR: 149, USD: 176.06, MXN: 3039.70 },
-    pro:     { EUR: 249, USD: 294.23, MXN: 5079.77 },
-    premium: { EUR: 399, USD: 471.48, MXN: 8139.87 }
+    kit:     { MXN: 795.62 },
+    basic:   { MXN: 3039.70 },
+    pro:     { MXN: 5079.77 },
+    premium: { MXN: 8139.87 }
   },
 
   STRIPE_LINKS: {
-    kit: {
-      EUR: "https://buy.stripe.com/eVq6oI8T1gKB98pdfy28800",
-      USD: "https://buy.stripe.com/eVq6oI8T1gKB98pdfy28800",
-      MXN: "https://buy.stripe.com/eVq6oI8T1gKB98pdfy28800"
-    },
-    basic: {
-      EUR: "https://buy.stripe.com/5kQbJ20mveCt4S91wQ28802",
-      USD: "https://buy.stripe.com/5kQbJ20mveCt4S91wQ28802",
-      MXN: "https://buy.stripe.com/5kQbJ20mveCt4S91wQ28802"
-    },
-    pro: {
-      EUR: "https://buy.stripe.com/6oU5kE2uD65XckB1wQ28803",
-      USD: "https://buy.stripe.com/6oU5kE2uD65XckB1wQ28803",
-      MXN: "https://buy.stripe.com/6oU5kE2uD65XckB1wQ28803"
-    },
-    premium: {
-      EUR: "https://buy.stripe.com/4gM14o3yHculesJ3EY28801",
-      USD: "https://buy.stripe.com/4gM14o3yHculesJ3EY28801",
-      MXN: "https://buy.stripe.com/4gM14o3yHculesJ3EY28801"
-    },
-    guia: { EUR: "", USD: "", MXN: "" }
+    kit:     { MXN: "https://buy.stripe.com/eVq6oI8T1gKB98pdfy28800" },
+    basic:   { MXN: "https://buy.stripe.com/5kQbJ20mveCt4S91wQ28802" },
+    pro:     { MXN: "https://buy.stripe.com/6oU5kE2uD65XckB1wQ28803" },
+    premium: { MXN: "https://buy.stripe.com/4gM14o3yHculesJ3EY28801" },
+    guia:    { MXN: "" }
   }
 };
