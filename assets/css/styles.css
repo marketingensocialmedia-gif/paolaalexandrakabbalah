@@ -543,6 +543,30 @@ footer a{ color: var(--text); text-decoration: underline; text-underline-offset:
   text-align: center;
 }
 
+/* ==== FIX: stop global centering (keep only what you want centered) ==== */
+
+/* Force left align for main content blocks */
+.page, .container, .section, .card, .content, .hero, .about, .products {
+  text-align: left;
+}
+
+/* Keep the CTA centered if you want */
+.blessing-cta {
+  text-align: center;
+}
+
+/* BUT make the blessing title/paragraphs left-aligned (if that’s what you want) */
+.blessing-title,
+.blessing-lines,
+.blessing-lines p {
+  text-align: left;
+}
+
+/* If your cards are centered because of flex */
+.card {
+  align-items: flex-start;
+}
+
 /* el caption ya está centrado, pero por si acaso */
 .blessing-caption{
   text-align: center;
