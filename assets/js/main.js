@@ -30,7 +30,8 @@
     document.querySelectorAll("[data-price-key]").forEach(el => {
       const key = el.getAttribute("data-price-key");
       const v = prices && prices[key] ? prices[key][currency] : undefined;
-      if (typeof v === "number") el.textContent = formatPrice(v);
+      const num = Number(v);
+      if (!Number.isNaN(num)) el.textContent = formatPrice(num);
     });
 
     const links = (cfg.STRIPE_LINKS || {});
