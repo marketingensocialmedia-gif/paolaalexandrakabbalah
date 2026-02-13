@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F4EEFF"/>
+      <stop offset="0.55" stop-color="#DCCBFF"/>
+      <stop offset="1" stop-color="#BFA6FF"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#BFA6FF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#8F7BFF" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 .45 0" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#BFA6FF" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(70,48)" filter="url(#shadow)">
+    <circle cx="110" cy="110" r="92" fill="none" stroke="url(#g1)" stroke-width="2.5" opacity="0.85"/>
+    <circle cx="110" cy="110" r="70" fill="none" stroke="url(#g2)" stroke-width="2" opacity="0.55"/>
+
+    <g opacity="0.55" filter="url(#softGlow)">
+      <circle cx="45" cy="65" r="2.2" fill="#F9F6FF"/>
+      <circle cx="170" cy="55" r="1.8" fill="#F9F6FF"/>
+      <circle cx="185" cy="145" r="2.0" fill="#F9F6FF"/>
+      <circle cx="65" cy="185" r="1.9" fill="#F9F6FF"/>
+      <circle cx="120" cy="25" r="1.7" fill="#F9F6FF"/>
+    </g>
+
+    <g opacity="0.9" filter="url(#softGlow)">
+      <path d="M110 36
+               C132 58 145 78 145 110
+               C145 142 132 162 110 184
+               C88 162 75 142 75 110
+               C75 78 88 58 110 36Z"
+            fill="url(#g1)" opacity="0.25"/>
+      <path d="M36 110
+               C58 88 78 75 110 75
+               C142 75 162 88 184 110
+               C162 132 142 145 110 145
+               C78 145 58 132 36 110Z"
+            fill="url(#g1)" opacity="0.20"/>
+      <path d="M110 52 L129 91 L172 110 L129 129 L110 168 L91 129 L48 110 L91 91 Z"
+            fill="none" stroke="url(#g2)" stroke-width="2.1" opacity="0.75"/>
+      <circle cx="110" cy="110" r="6" fill="#F9F6FF" opacity="0.95"/>
+    </g>
+
+    <g>
+      <text x="110" y="126" text-anchor="middle"
+            font-family="Georgia, 'Times New Roman', serif"
+            font-size="44" font-weight="600"
+            fill="#F9F6FF" opacity="0.95"
+            letter-spacing="1.2">PA</text>
+      <text x="110" y="154" text-anchor="middle"
+            font-family="Georgia, 'Times New Roman', serif"
+            font-size="14" font-weight="600"
+            fill="#F0EAFF" opacity="0.85"
+            letter-spacing="4">KABBALAH</text>
+    </g>
+  </g>
+
+  <g transform="translate(300,94)">
+    <text x="0" y="70"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="72" font-weight="600"
+          fill="#F6F0FF"
+          letter-spacing="-0.5">Paola Alexandra</text>
+
+    <text x="2" y="114"
+          font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+          font-size="18" font-weight="600"
+          fill="#D9CCFF"
+          letter-spacing="6"
+          opacity="0.95">KABBALAH</text>
+
+    <text x="2" y="154"
+          font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+          font-size="18" font-weight="400"
+          fill="#C9B9F7"
+          opacity="0.85">Claridad • hábitos • decisión consciente</text>
+  </g>
+</svg>
