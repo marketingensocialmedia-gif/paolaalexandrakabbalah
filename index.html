@@ -522,6 +522,7 @@
           <h3>Arquitectura Completa</h3>
            <div class="price" data-price data-mxn="2,055" data-eur="100.87">
           $2,055 <small>MXN</small>
+          </div>
           <ul class="list">
             <li><span class="dot"></span>Incluye nombre completo (letras + números)</li>
             <li><span class="dot"></span>Plan 90 días + 1 ajuste posterior</li>
@@ -672,38 +673,57 @@
         pro:     { MXN: "https://buy.stripe.com/dRmbJ2glt9i9doFdfy28805", EUR: "https://buy.stripe.com/5kQ9AUd9hgKB4S91wQ2880a" }
         premium: { MXN: "https://buy.stripe.com/8x200k8T1dyp84lfnG28806", EUR: "https://buy.stripe.com/fZubJ25GPbqhact2AU28809" }
       }
-    };
-let CURRENCY = "MXN";
+  };
 
-document.querySelectorAll("[data-currency-btn]").forEach(b => {
-  b.addEventListener("click", () => {
-    CURRENCY = b.getAttribute("data-currency-btn") || "MXN";
+  let CURRENCY = localStorage.getItem("currency") || "MXN";
 
-    // ARIA state (opcional pero UX pro)
-    document.querySelectorAll("[data-currency-btn]").forEach(x => {
-      x.setAttribute("aria-pressed", x === b ? "true" : "false");
+  function setCurrency(cur){
+    CURRENCY = cur;
+    localStorage.setItem("currency", cur);
+
+    // UI: estado del toggle
+    document.querySelectorAll("[data-currency-btn]").forEach(b => {
+      b.setAttribute("aria-pressed", b.getAttribute("data-currency-btn") === cur ? "true" : "false");
     });
-  });
-});
 
-    document.addEventListener("click", (e) => {
-  const btn = e.target.closest("[data-checkout-key]");
-  if (!btn) return;
+    // UI: actualizar precios visibles y label
+    document.querySelectorAll("[data-price]").forEach(el => {
+      const mxn = el.getAttribute("data-mxn");
+      const eur = el.getAttribute("data-eur");
+      el.textContent = (cur === "EUR" ? eur : mxn);
+    });
 
-  e.preventDefault();
-
-  const key = btn.getAttribute("data-checkout-key");
-  const url = SITE_CONFIG.STRIPE_LINKS?.[key]?.[CURRENCY];
-
-  if (!url) {
-    alert("Falta el link de Stripe para: " + key + " (" + CURRENCY + ")");
-    return;
+    document.querySelectorAll("[data-cur-label]").forEach(el => {
+      el.textContent = cur;
+    });
   }
 
-  window.location.href = url;
-});
+  // Init
+  setCurrency(CURRENCY);
 
-  </script>
+  // Toggle
+  document.querySelectorAll("[data-currency-btn]").forEach(b => {
+    b.addEventListener("click", () => setCurrency(b.getAttribute("data-currency-btn") || "MXN"));
+  });
+
+  // Checkout
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-checkout-key]");
+    if (!btn) return;
+
+    e.preventDefault();
+    const key = btn.getAttribute("data-checkout-key");
+    const url = SITE_CONFIG.STRIPE_LINKS?.[key]?.[CURRENCY] || SITE_CONFIG.STRIPE_LINKS?.[key]?.MXN;
+
+    if (!url) {
+      alert("Falta el link de Stripe para: " + key + " (" + CURRENCY + ")");
+      return;
+    }
+
+    window.location.href = url;
+  });
+</script>
+
 
 </body>
 </html>
