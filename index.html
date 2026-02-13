@@ -341,6 +341,34 @@
   box-shadow: 0 25px 70px rgba(200,166,255,.16);
   filter: saturate(1.05) contrast(1.02);
 } 
+
+.currency{
+  display:flex;
+  gap:8px;
+  padding:6px;
+  border-radius:999px;
+  border:1px solid rgba(200,166,255,.18);
+  background: rgba(0,0,0,.10);
+}
+
+.cur-btn{
+  padding:10px 12px;
+  border-radius:999px;
+  border:1px solid transparent;
+  background: transparent;
+  color: var(--muted2);
+  font-weight:800;
+  font-size:13px;
+  cursor:pointer;
+}
+
+.cur-btn[aria-pressed="true"]{
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,214,255,.28);
+  color: var(--text);
+  box-shadow: 0 10px 30px rgba(200,166,255,.16);
+}
+
 </style>
 
   
@@ -361,6 +389,11 @@
           <a href="#planes">Planes</a>
           <a href="#faq">FAQ</a>
         </div>
+
+        <div class="currency" aria-label="Moneda">
+  <button class="cur-btn" type="button" data-currency-btn="MXN" aria-pressed="true">MXN</button>
+  <button class="cur-btn" type="button" data-currency-btn="EUR" aria-pressed="false">EUR</button>
+</div>
 
         <a class="btn primary small" href="#planes">Ver planes</a>
       </div>
@@ -454,13 +487,15 @@
     <div class="wrap">
       <span class="kicker">Planes</span>
       <h2>Elige tu nivel de claridad.</h2>
-      <p class="lead">Todos los planes están en <b>MXN</b>. El objetivo es el mismo: ver el patrón y cambiar tu forma de decidir.</p>
+      <p class="lead">Puedes ver precios en MXN o EUR. El pago se abre en la moneda elegida.> El objetivo es el mismo: ver el patrón y cambiar tu forma de decidir.</p>
 
       <div class="plans">
 
         <div class="plan">
           <h3>Mapa Base</h3>
-          <div class="price">$989 <small>MXN</small></div>
+          <div class="price" data-price data-mxn="989" data-eur="149">
+          $989 <small>MXN</small>
+          </div>
           <ul class="list">
             <li><span class="dot"></span>Perfil estructural + enfoque (amor / propósito / paz / dinero)</li>
             <li><span class="dot"></span>Patrón principal que se repite</li>
@@ -472,7 +507,9 @@
         <div class="plan featured">
           <div class="tag">Más elegido</div>
           <h3>Integración 30 días</h3>
-          <div class="price">$1,099 <small>MXN</small></div>
+          <div class="price" data-price data-mxn="1,099" data-eur="53.94">
+          $1,099 <small>MXN</small>
+          </div>
           <ul class="list">
             <li><span class="dot"></span>Todo lo del Mapa Base</li>
             <li><span class="dot"></span>Plan práctico de 30 días (estructura + acción)</li>
@@ -483,7 +520,8 @@
 
         <div class="plan">
           <h3>Arquitectura Completa</h3>
-          <div class="price">$2,055 <small>MXN</small></div>
+           <div class="price" data-price data-mxn="2,055" data-eur="100.87">
+          $2,055 <small>MXN</small>
           <ul class="list">
             <li><span class="dot"></span>Incluye nombre completo (letras + números)</li>
             <li><span class="dot"></span>Plan 90 días + 1 ajuste posterior</li>
@@ -630,24 +668,41 @@
   <script>
     const SITE_CONFIG = {
       STRIPE_LINKS: {
-        basic:   { MXN: "https://buy.stripe.com/eVq14o4CL8e5actb7q28804" },
-        pro:     { MXN: "https://buy.stripe.com/dRmbJ2glt9i9doFdfy28805" },
-        premium: { MXN: "https://buy.stripe.com/8x200k8T1dyp84lfnG28806" }
+        basic:   { MXN: "https://buy.stripe.com/eVq14o4CL8e5actb7q28804", EUR: "https://buy.stripe.com/7sY14o1qz2TLckBb7q28807" }
+        pro:     { MXN: "https://buy.stripe.com/dRmbJ2glt9i9doFdfy28805", EUR: "https://buy.stripe.com/5kQ9AUd9hgKB4S91wQ2880a" }
+        premium: { MXN: "https://buy.stripe.com/8x200k8T1dyp84lfnG28806", EUR: "https://buy.stripe.com/fZubJ25GPbqhact2AU28809" }
       }
     };
+let CURRENCY = "MXN";
+
+document.querySelectorAll("[data-currency-btn]").forEach(b => {
+  b.addEventListener("click", () => {
+    CURRENCY = b.getAttribute("data-currency-btn") || "MXN";
+
+    // ARIA state (opcional pero UX pro)
+    document.querySelectorAll("[data-currency-btn]").forEach(x => {
+      x.setAttribute("aria-pressed", x === b ? "true" : "false");
+    });
+  });
+});
 
     document.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-checkout-key]");
-      if (!btn) return;
-      e.preventDefault();
-      const key = btn.getAttribute("data-checkout-key");
-      const url = SITE_CONFIG.STRIPE_LINKS?.[key]?.MXN;
-      if (!url) {
-        alert("Falta el link de Stripe para: " + key);
-        return;
-      }
-      window.location.href = url;
-    });
+  const btn = e.target.closest("[data-checkout-key]");
+  if (!btn) return;
+
+  e.preventDefault();
+
+  const key = btn.getAttribute("data-checkout-key");
+  const url = SITE_CONFIG.STRIPE_LINKS?.[key]?.[CURRENCY];
+
+  if (!url) {
+    alert("Falta el link de Stripe para: " + key + " (" + CURRENCY + ")");
+    return;
+  }
+
+  window.location.href = url;
+});
+
   </script>
 
 </body>
