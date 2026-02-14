@@ -491,10 +491,9 @@
 
       <div class="plans">
 
-        <div class="plan">
-          <h3>Mapa Base</h3>
-          <div class="price" data-price data-mxn="989" data-eur="149">
-          $989 <small>MXN</small>
+          <<div class="price">
+          <span data-price data-mxn="$989" data-eur="€149">$989</span>
+          <small data-cur-label>MXN</small>
           </div>
           <ul class="list">
             <li><span class="dot"></span>Perfil estructural + enfoque (amor / propósito / paz / dinero)</li>
@@ -504,11 +503,9 @@
           <a class="btn ghost" href="#" data-checkout-key="basic">Elegir Mapa Base</a>
         </div>
 
-        <div class="plan featured">
-          <div class="tag">Más elegido</div>
-          <h3>Integración 30 días</h3>
-          <div class="price" data-price data-mxn="1,099" data-eur="53.94">
-          $1,099 <small>MXN</small>
+          <div class="price">
+          <span data-price data-mxn="$1,099" data-eur="€249">$1,099</span>
+          <small data-cur-label>MXN</small>
           </div>
           <ul class="list">
             <li><span class="dot"></span>Todo lo del Mapa Base</li>
@@ -518,10 +515,9 @@
           <a class="btn primary" href="#" data-checkout-key="pro">Ordenar mi estructura</a>
         </div>
 
-        <div class="plan">
-          <h3>Arquitectura Completa</h3>
-           <div class="price" data-price data-mxn="2,055" data-eur="100.87">
-          $2,055 <small>MXN</small>
+          <div class="price">
+          <span data-price data-mxn="$2,055" data-eur="€399">$2,055</span>
+          <small data-cur-label>MXN</small>
           </div>
           <ul class="list">
             <li><span class="dot"></span>Incluye nombre completo (letras + números)</li>
@@ -667,12 +663,12 @@
 
   <!-- Script mínimo: enviar a Stripe -->
   <script>
-    const SITE_CONFIG = {
-      STRIPE_LINKS: {
-        basic:   { MXN: "https://buy.stripe.com/eVq14o4CL8e5actb7q28804", EUR: "https://buy.stripe.com/7sY14o1qz2TLckBb7q28807" }
-        pro:     { MXN: "https://buy.stripe.com/dRmbJ2glt9i9doFdfy28805", EUR: "https://buy.stripe.com/5kQ9AUd9hgKB4S91wQ2880a" }
-        premium: { MXN: "https://buy.stripe.com/8x200k8T1dyp84lfnG28806", EUR: "https://buy.stripe.com/fZubJ25GPbqhact2AU28809" }
-      }
+  const SITE_CONFIG = {
+    STRIPE_LINKS: {
+      basic:   { MXN: "https://buy.stripe.com/eVq14o4CL8e5actb7q28804", EUR: "https://buy.stripe.com/7sY14o1qz2TLckBb7q28807" },
+      pro:     { MXN: "https://buy.stripe.com/dRmbJ2glt9i9doFdfy28805", EUR: "https://buy.stripe.com/5kQ9AUd9hgKB4S91wQ2880a" },
+      premium: { MXN: "https://buy.stripe.com/8x200k8T1dyp84lfnG28806", EUR: "https://buy.stripe.com/fZubJ25GPbqhact2AU28809" }
+    }
   };
 
   let CURRENCY = localStorage.getItem("currency") || "MXN";
@@ -681,18 +677,22 @@
     CURRENCY = cur;
     localStorage.setItem("currency", cur);
 
-    // UI: estado del toggle
+    // Estado visual del toggle
     document.querySelectorAll("[data-currency-btn]").forEach(b => {
-      b.setAttribute("aria-pressed", b.getAttribute("data-currency-btn") === cur ? "true" : "false");
+      b.setAttribute(
+        "aria-pressed",
+        b.getAttribute("data-currency-btn") === cur ? "true" : "false"
+      );
     });
 
-    // UI: actualizar precios visibles y label
+    // Actualizar precios (solo el span)
     document.querySelectorAll("[data-price]").forEach(el => {
       const mxn = el.getAttribute("data-mxn");
       const eur = el.getAttribute("data-eur");
       el.textContent = (cur === "EUR" ? eur : mxn);
     });
 
+    // Actualizar etiqueta MXN/EUR
     document.querySelectorAll("[data-cur-label]").forEach(el => {
       el.textContent = cur;
     });
@@ -703,7 +703,9 @@
 
   // Toggle
   document.querySelectorAll("[data-currency-btn]").forEach(b => {
-  b.addEventListener("click", () => setCurrency(b.getAttribute("data-currency-btn") || "MXN"));
+    b.addEventListener("click", () => {
+      setCurrency(b.getAttribute("data-currency-btn") || "MXN");
+    });
   });
 
   // Checkout
@@ -713,7 +715,10 @@
 
     e.preventDefault();
     const key = btn.getAttribute("data-checkout-key");
-    const url = SITE_CONFIG.STRIPE_LINKS?.[key]?.[CURRENCY] || SITE_CONFIG.STRIPE_LINKS?.[key]?.MXN;
+
+    const url =
+      SITE_CONFIG.STRIPE_LINKS?.[key]?.[CURRENCY] ||
+      SITE_CONFIG.STRIPE_LINKS?.[key]?.MXN;
 
     if (!url) {
       alert("Falta el link de Stripe para: " + key + " (" + CURRENCY + ")");
@@ -723,7 +728,6 @@
     window.location.href = url;
   });
 </script>
-
 
 </body>
 </html>
