@@ -693,7 +693,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
   </div>
 
   <!-- Script mínimo: enviar a Stripe -->
-  <script>
+ <script>
   const SITE_CONFIG = {
     STRIPE_LINKS: {
       basic:   { MXN: "https://buy.stripe.com/eVq14o4CL8e5actb7q28804", EUR: "https://buy.stripe.com/7sY14o1qz2TLckBb7q28807" },
@@ -702,75 +702,78 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     }
   };
 
+  // ---------- Currency ----------
   let CURRENCY = localStorage.getItem("currency") || "MXN";
 
   function setCurrency(cur){
-    CURRENCY = cur;
-    localStorage.setItem("currency", cur);
+    CURRENCY = (cur === "EUR") ? "EUR" : "MXN";
+    localStorage.setItem("currency", CURRENCY);
 
-    // Estado visual del toggle
+    // UI: estado del toggle
     document.querySelectorAll("[data-currency-btn]").forEach(b => {
       b.setAttribute(
         "aria-pressed",
-        b.getAttribute("data-currency-btn") === cur ? "true" : "false"
+        b.getAttribute("data-currency-btn") === CURRENCY ? "true" : "false"
       );
     });
 
-    // Actualizar precios (solo el span)
+    // UI: actualizar precios visibles y label (manteniendo tu diseño)
     document.querySelectorAll("[data-price]").forEach(el => {
-      const mxn = el.getAttribute("data-mxn");
-      const eur = el.getAttribute("data-eur");
-      el.textContent = (cur === "EUR" ? eur : mxn);
+      const mxn = el.getAttribute("data-mxn") || "";
+      const eur = el.getAttribute("data-eur") || "";
+      el.textContent = (CURRENCY === "EUR" ? eur : mxn);
     });
 
-    // Actualizar etiqueta MXN/EUR
     document.querySelectorAll("[data-cur-label]").forEach(el => {
-      el.textContent = cur;
+      el.textContent = CURRENCY;
     });
   }
 
-  // Init
+  // Init currency UI
   setCurrency(CURRENCY);
 
-    // TikTok: ViewContent cuando el usuario ve la sección #planes (solo 1 vez)
-(() => {
-  const plans = document.querySelector("#planes");
-  if (!plans) return;
-
-  let fired = false;
-
-  const obs = new IntersectionObserver((entries) => {
-    if (fired) return;
-    if (entries[0].isIntersecting) {
-      fired = true;
-
-      if (window.ttq && typeof window.ttq.track === "function") {
-        ttq.track("ViewContent", { content_name: "Planes" });
-      }
-
-      obs.disconnect();
-    }
-  }, { threshold: 0.25 });
-
-  obs.observe(plans);
-})();
-
-
-  // Toggle
+  // Toggle listeners
   document.querySelectorAll("[data-currency-btn]").forEach(b => {
     b.addEventListener("click", () => {
       setCurrency(b.getAttribute("data-currency-btn") || "MXN");
     });
   });
 
-  // Checkout
+  // ---------- TikTok: ViewContent when #planes is visible (once) ----------
+  (() => {
+    const plans = document.querySelector("#planes"); // OJO: tu section debe ser id="planes"
+    if (!plans) return;
+
+    let fired = false;
+
+    const obs = new IntersectionObserver((entries) => {
+      if (fired) return;
+      if (entries.some(e => e.isIntersecting)) {
+        fired = true;
+
+        if (window.ttq && typeof window.ttq.track === "function") {
+          ttq.track("ViewContent", {
+            content_name: "Planes",
+            content_id: "planes",
+            content_type: "product_group"
+          });
+        }
+
+        obs.disconnect();
+      }
+    }, { threshold: 0.25 });
+
+    obs.observe(plans);
+  })();
+
+  // ---------- Checkout (click on plan buttons) ----------
   document.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-checkout-key]");
     if (!btn) return;
 
     e.preventDefault();
-    const key = btn.getAttribute("data-checkout-key");
 
+    const key = btn.getAttribute("data-checkout-key"); // basic | pro | premium
     const url =
       SITE_CONFIG.STRIPE_LINKS?.[key]?.[CURRENCY] ||
       SITE_CONFIG.STRIPE_LINKS?.[key]?.MXN;
@@ -780,7 +783,19 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
       return;
     }
 
-    window.location.href = url;
+    // TikTok: InitiateCheckout on click (recommended)
+    if (window.ttq && typeof window.ttq.track === "function") {
+      ttq.track("InitiateCheckout", {
+        content_id: key,
+        content_name: "Paola Alexandra - " + key,
+        currency: CURRENCY
+      });
+    }
+
+    // give pixel a moment to send before redirect
+    setTimeout(() => {
+      window.location.href = url;
+    }, 150);
   });
 </script>
 
