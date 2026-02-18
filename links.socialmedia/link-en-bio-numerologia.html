@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elige tu nivel de claridad · Numerología</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080612;
+      --surface: #100e20;
+      --card: #16132a;
+      --card-hover: #1d1938;
+      --accent: #c8a8ff;
+      --gold: #e8c87a;
+      --rose: #e87a9a;
+      --text: #f0ecff;
+      --muted: #7868a8;
+      --border: #2a2450;
+      --most-chosen: #c8a8ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Animated star background */
+    .stars-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle var(--dur) ease-in-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: var(--op);
+      }
+    }
+
+    .orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .orb-1 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(120, 60, 220, 0.18), transparent 70%);
+      top: -100px;
+      left: -100px;
+      animation: orbFloat 12s ease-in-out infinite;
+    }
+
+    .orb-2 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(200, 130, 255, 0.12), transparent 70%);
+      bottom: 100px;
+      right: -80px;
+      animation: orbFloat 16s ease-in-out infinite reverse;
+    }
+
+    @keyframes orbFloat {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(30px, 40px);
+      }
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 52px 20px 60px;
+    }
+
+    /* HEADER */
+    .profile-area {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .avatar-ring {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--rose), var(--gold));
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      position: relative;
+    }
+
+    .avatar-ring::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--rose), var(--gold));
+      z-index: -1;
+      animation: rotateBorder 6s linear infinite;
+    }
+
+    .avatar-ring::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: var(--bg);
+      z-index: -2;
+    }
+
+    @keyframes rotateBorder {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .profile-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 6px;
+    }
+
+    .profile-tagline {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .divider-stars {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 24px 0 10px;
+      color: var(--muted);
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .divider-stars::before,
+    .divider-stars::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* INTRO TEXT */
+    .intro {
+      text-align: center;
+      margin-bottom: 32px;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+
+    .intro h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .intro h2 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .intro p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* PACKAGES */
+    .packages {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .pkg-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px 22px;
+      cursor: pointer;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s, background 0.25s;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.7s ease both;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .pkg-card:nth-child(1) {
+      animation-delay: 0.15s;
+    }
+
+    .pkg-card:nth-child(2) {
+      animation-delay: 0.25s;
+    }
+
+    .pkg-card:nth-child(3) {
+      animation-delay: 0.35s;
+    }
+
+    .pkg-card:hover {
+      transform: translateY(-3px);
+      background: var(--card-hover);
+      box-shadow: 0 12px 40px rgba(120, 60, 220, 0.2);
+    }
+
+    .pkg-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, #1d1938, #16132a);
+      box-shadow: 0 0 30px rgba(200, 168, 255, 0.1);
+    }
+
+    .pkg-card.featured:hover {
+      box-shadow: 0 12px 50px rgba(200, 168, 255, 0.25);
+    }
+
+    .pkg-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(200, 168, 255, 0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .badge-top {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--accent);
+      color: var(--bg);
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    .pkg-icon {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .pkg-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .pkg-price {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .pkg-price span {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-left: 4px;
+    }
+
+    .pkg-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .pkg-features li {
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .pkg-features li::before {
+      content: '✦';
+      color: var(--accent);
+      font-size: 0.65rem;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .pkg-cta {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      font-family: 'Outfit', sans-serif;
+      transition: all 0.2s;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .cta-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .cta-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .cta-filled {
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+    }
+
+    .cta-filled:hover {
+      background: #d8b8ff;
+    }
+
+    .cta-gold {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+    }
+
+    .cta-gold:hover {
+      background: rgba(232, 200, 122, 0.1);
+    }
+
+    /* SOCIAL LINKS */
+    .social-section {
+      animation: fadeUp 0.7s 0.45s ease both;
+    }
+
+    .social-label {
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .social-btn {
+      flex: 1;
+      max-width: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .social-btn:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .social-icon {
+      font-size: 1.1rem;
+    }
+
+    /* FREE OFFER */
+    .free-offer {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 24px;
+      animation: fadeUp 0.7s 0.4s ease both;
+    }
+
+    .free-offer .offer-emoji {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .free-offer .offer-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .free-offer .offer-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .free-offer .offer-btn {
+      display: inline-block;
+      padding: 10px 24px;
+      background: transparent;
+      border: 1px solid var(--rose);
+      color: var(--rose);
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .free-offer .offer-btn:hover {
+      background: rgba(232, 122, 154, 0.1);
+    }
+
+    .form-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .form-input {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 0.85rem;
+      font-family: 'Outfit', sans-serif;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input::placeholder {
+      color: var(--muted);
+    }
+
+    .form-input:focus {
+      border-color: var(--rose);
+    }
+
+    .form-input[type="date"] {
+      color-scheme: dark;
+    }
+
+    .offer-btn-submit {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: transparent;
+      border: 1px solid var(--rose);
+      color: var(--rose);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    .offer-btn-submit:hover {
+      background: rgba(232, 122, 154, 0.12);
+    }
+
+    /* CURRENCY TOGGLE */
+    .currency-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 4px;
+      width: fit-content;
+      margin: 0 auto 24px;
+      animation: fadeUp 0.7s 0.12s ease both;
+    }
+
+    .currency-btn {
+      padding: 8px 24px;
+      border-radius: 100px;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 500;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.5px;
+    }
+
+    .currency-btn.active {
+      background: var(--accent);
+      color: var(--bg);
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      line-height: 2;
+      animation: fadeUp 0.7s 0.5s ease both;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Animated background -->
+  <div class="stars-bg" id="starsBg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="wrapper">
+
+    <!-- Profile -->
+    <div class="profile-area">
+      <div class="avatar-ring">🔮</div>
+      <div class="profile-name">Paola Alexandra</div>
+      <div class="profile-tagline">Numeróloga · Te ayudo a ver el patrón que se repite en tu vida para que puedas
+        cambiarlo.</div>
+    </div>
+
+    <!-- Heading -->
+    <div class="intro">
+      <h2>Elige tu nivel<br>de <em>claridad.</em></h2>
+      <p>Tu nombre y fecha de nacimiento contienen un mapa.<br>El objetivo es que lo veas — y que cambie tu forma de
+        decidir.</p>
+      <div class="divider-stars">✦ ✦ ✦</div>
+    </div>
+
+    <!-- Currency Toggle -->
+    <div class="currency-toggle">
+      <button class="currency-btn active" onclick="setCurrency('MXN', this)">🇲🇽 MXN</button>
+      <button class="currency-btn" onclick="setCurrency('EUR', this)">🇪🇺 EUR</button>
+    </div>
+
+    <!-- Packages -->
+    <div class="packages">
+
+      <!-- Package 1: Mapa Base -->
+      <a class="pkg-card" id="card-basic" href="#" target="_blank">
+        <span class="pkg-icon">🗺️</span>
+        <div class="pkg-name">Mapa Base</div>
+        <div class="pkg-price" id="price-basic">$989 <span>MXN</span></div>
+        <ul class="pkg-features">
+          <li>Perfil estructural completo (amor / propósito / paz / dinero)</li>
+          <li>Patrón principal que se repite en tu vida</li>
+          <li>Recomendaciones claras para ordenar tu energía</li>
+        </ul>
+        <button class="pkg-cta cta-outline">Elegir Mapa Base →</button>
+      </a>
+
+      <!-- Package 2: Integración 30 días (Featured) -->
+      <a class="pkg-card featured" id="card-pro" href="#" target="_blank">
+        <div class="badge-top">Más elegido</div>
+        <span class="pkg-icon">🌙</span>
+        <div class="pkg-name">Integración 30 días</div>
+        <div class="pkg-price" id="price-pro">$1,099 <span>MXN</span></div>
+        <ul class="pkg-features">
+          <li>Todo lo del Mapa Base</li>
+          <li>Plan práctico de 30 días (estructura + acción)</li>
+          <li>Activación de cualidades: ciclos, talentos y retos</li>
+        </ul>
+        <button class="pkg-cta cta-filled">Ordenar mi estructura →</button>
+      </a>
+
+      <!-- Package 3: Arquitectura Completa -->
+      <a class="pkg-card" id="card-premium" href="#" target="_blank">
+        <span class="pkg-icon">🏛️</span>
+        <div class="pkg-name">Arquitectura Completa</div>
+        <div class="pkg-price" id="price-premium">$2,055 <span>MXN</span></div>
+        <ul class="pkg-features">
+          <li>Incluye nombre completo (letras + números)</li>
+          <li>Plan de 90 días + 1 ajuste posterior</li>
+          <li>Audio personalizado de 5 a 10 minutos</li>
+        </ul>
+        <button class="pkg-cta cta-gold">Rediseñar mi patrón →</button>
+      </a>
+
+    </div>
+
+    <!-- Free hook -->
+    <div class="free-offer">
+      <span class="offer-emoji">✨</span>
+      <div class="offer-title">¿No sabes por dónde empezar?</div>
+      <div class="offer-desc">Escribe tu nombre y fecha de nacimiento — te calculo tu número de vida gratis y te
+        respondo por correo.</div>
+      <div id="form-area">
+        <div class="form-fields">
+          <input class="form-input" type="text" id="f-nombre" placeholder="Tu nombre completo" />
+          <input class="form-input" type="date" id="f-fecha" />
+          <input class="form-input" type="email" id="f-email" placeholder="Tu correo electrónico" />
+        </div>
+        <button class="offer-btn-submit" onclick="submitForm()">Calcular mi número gratis ✦</button>
+      </div>
+      <div id="form-success" style="display:none; padding: 12px 0;">
+        <div style="font-size:1.8rem; margin-bottom:8px;">🔮</div>
+        <div style="font-size:0.95rem; font-weight:500; margin-bottom:6px;">¡Recibido!</div>
+        <div style="font-size:0.82rem; color:var(--muted); line-height:1.6;">Te escribimos pronto con tu número de vida.
+        </div>
+      </div>
+    </div>
+
+    <!-- Social -->
+    <div class="social-section">
+      <div class="social-label">Sígueme en</div>
+      <div class="social-links">
+        <a class="social-btn" href="#" onclick="return false;">
+          <span class="social-icon">📸</span> Instagram
+        </a>
+        <a class="social-btn" href="#" onclick="return false;">
+          <span class="social-icon">🎵</span> TikTok
+        </a>
+      </div>
+    </div>
+
+    <footer>
+      ✦ &nbsp;Numerología con propósito&nbsp; ✦<br>
+      [Tu ciudad · Tu correo o WhatsApp]
+    </footer>
+
+  </div>
+
+  <script>
+    async function submitForm() {
+      const nombre = document.getElementById('f-nombre').value.trim();
+      const fecha = document.getElementById('f-fecha').value;
+      const email = document.getElementById('f-email').value.trim();
+
+      if (!nombre || !fecha || !email) {
+        alert('Por favor completa todos los campos.');
+        return;
+      }
+
+      const btn = document.querySelector('.offer-btn-submit');
+      btn.textContent = 'Enviando...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('https://formspree.io/f/xwvnqlvd', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            nombre,
+            fecha_nacimiento: fecha,
+            email,
+            _subject: 'Solicitud: Cálculo de número de vida gratis'
+          })
+        });
+
+        if (res.ok) {
+          document.getElementById('form-area').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        } else {
+          alert('Hubo un error al enviar. Intenta de nuevo.');
+          btn.textContent = 'Calcular mi número gratis ✦';
+          btn.disabled = false;
+        }
+      } catch (e) {
+        alert('Hubo un error de conexión. Intenta de nuevo.');
+        btn.textContent = 'Calcular mi número gratis ✦';
+        btn.disabled = false;
+      }
+    }
+
+
+    const STRIPE_LINKS = {
+      basic: { MXN: "https://buy.stripe.com/eVq14o4CL8e5actb7q28804", EUR: "https://buy.stripe.com/7sY14o1qz2TLckBb7q28807" },
+      pro: { MXN: "https://buy.stripe.com/dRmbJ2glt9i9doFdfy28805", EUR: "https://buy.stripe.com/5kQ9AUd9hgKB4S91wQ2880a" },
+      premium: { MXN: "https://buy.stripe.com/8x200k8T1dyp84lfnG28806", EUR: "https://buy.stripe.com/fZubJ25GPbqhact2AU28809" }
+    };
+
+    const PRICES = {
+      basic: { MXN: "$989 <span>MXN</span>", EUR: "€57 <span>EUR</span>" },
+      pro: { MXN: "$1,099 <span>MXN</span>", EUR: "€64 <span>EUR</span>" },
+      premium: { MXN: "$2,055 <span>MXN</span>", EUR: "€119 <span>EUR</span>" }
+    };
+
+    let currentCurrency = 'MXN';
+
+    function setCurrency(currency, btn) {
+      currentCurrency = currency;
+      document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      ['basic', 'pro', 'premium'].forEach(pkg => {
+        document.getElementById('card-' + pkg).href = STRIPE_LINKS[pkg][currency];
+        document.getElementById('price-' + pkg).innerHTML = PRICES[pkg][currency];
+      });
+    }
+
+    // Set initial Stripe links (MXN default)
+    setCurrency('MXN', document.querySelector('.currency-btn.active'));
+
+    // Generate twinkling stars
+    const bg = document.getElementById('starsBg');
+    for (let i = 0; i < 80; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.cssText = `
+      left: ${Math.random() * 100}%;
+      top: ${Math.random() * 100}%;
+      --dur: ${2 + Math.random() * 4}s;
+      --op: ${0.2 + Math.random() * 0.5};
+      animation-delay: ${Math.random() * 5}s;
+      width: ${Math.random() > 0.7 ? 3 : 2}px;
+      height: ${Math.random() > 0.7 ? 3 : 2}px;
+    `;
+      bg.appendChild(star);
+    }
+  </script>
+</body>
+
+</html>
