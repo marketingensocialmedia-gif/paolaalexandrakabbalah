@@ -7,10 +7,8 @@
   <title>Alexandra Kabbalah — claridad + hábitos en 10 minutos al día</title>
   <meta name="description" content="Kabbalah práctica, en español y sin dogma. Letras y números como método para enfoque, límites y decisiones — sin promesas mágicas." />
 
-  <!-- SEO: cambia esta URL por tu dominio final (incluye el path si lo usas) -->
   <link rel="canonical" href="https://marketingensocialmedia-gif.github.io/paolaalexandrakabbalah/" />
 
-  <!-- Open Graph / Social -->
   <meta property="og:site_name" content="Paola Alexandra Kabbalah" />
   <meta property="og:title" content="Kabbalah práctica: claridad + hábitos en 10 minutos al día" />
   <meta property="og:description" content="Letras y números como método práctico para enfocarte, poner límites y tomar mejores decisiones — sin promesas mágicas." />
@@ -18,682 +16,1175 @@
   <meta property="og:url" content="https://marketingensocialmedia-gif.github.io/paolaalexandrakabbalah/" />
   <meta property="og:image" content="https://marketingensocialmedia-gif.github.io/paolaalexandrakabbalah/og.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kabbalah práctica: claridad + hábitos en 10 minutos al día" />
-  <meta name="twitter:description" content="Letras y números como método práctico para enfoque, límites y decisiones — sin promesas mágicas." />
-  <meta name="twitter:image" content="https://marketingensocialmedia-gif.github.io/paolaalexandrakabbalah/og.svg" />
 
-  <!-- Inline favicon (no archivos extra) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230B7CFF'/%3E%3Cstop offset='0.55' stop-color='%2319E6C0'/%3E%3Cstop offset='1' stop-color='%2338F28D'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='url(%23g)' stroke-width='5'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-size='28' font-weight='900' font-family='ui-sans-serif,system-ui' fill='white'%3E%D7%91%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23D4A96A'/%3E%3Cstop offset='1' stop-color='%23E8C99A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='url(%23g)' stroke-width='3'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-size='26' font-weight='600' font-family='Georgia,serif' fill='%23D4A96A'%3E%D7%91%3C/text%3E%3C/svg%3E" />
 
   <style>
-  :root{
-    /* Pastel-purple luxe (místico elegante, NO infantil) */
-    --bg0:#120A1C;
-    --bg1:#1A0F28;
-    --card:#201233;
-    --card2:#24153A;
-    --text:#F4ECFF;
-    --muted:#D3C2F0;
-    --muted2:#B9A6DA;
+  :root {
+    --bg0: #04020B;
+    --bg1: #07040F;
+    --bg2: #0C0818;
+    --card: rgba(255,255,255,0.035);
+    --card-border: rgba(212,169,106,0.12);
+    --card-hover: rgba(255,255,255,0.055);
 
-    --accent:#C8A6FF;     /* glow principal */
-    --accent2:#A884E8;    /* morado medio */
-    --accent3:#FFD6FF;    /* brillo suave */
-    --line: rgba(200,166,255,.18);
-    --shadow: 0 18px 60px rgba(0,0,0,.55);
-    --shadow2: 0 10px 30px rgba(0,0,0,.45);
+    --text: #F2EDFF;
+    --muted: #C4B4E0;
+    --muted2: #9A8ABE;
+    --muted3: #6A5A8E;
 
-    --radius: 22px;
+    --gold: #D4A96A;
+    --gold2: #E8C99A;
+    --gold3: rgba(212,169,106,0.18);
+    --gold-glow: rgba(212,169,106,0.08);
+
+    --accent: rgba(212,169,106,0.5);
+    --line: rgba(212,169,106,0.1);
+    --line2: rgba(212,169,106,0.06);
+
+    --radius: 20px;
     --radius2: 28px;
-    --max: 1120px;
+    --max: 1080px;
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
+
+    --shadow: 0 24px 80px rgba(0,0,0,0.7);
+    --shadow2: 0 8px 32px rgba(0,0,0,0.5);
+    --glow: 0 0 80px rgba(212,169,106,0.07);
   }
 
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    color:var(--text);
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    color: var(--text);
+    background: var(--bg0);
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Grain texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.028;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+
+  /* Ambient light */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
     background:
-      radial-gradient(900px 600px at 20% 10%, rgba(200,166,255,.22), transparent 55%),
-      radial-gradient(700px 520px at 80% 15%, rgba(255,214,255,.16), transparent 55%),
-      radial-gradient(900px 700px at 50% 80%, rgba(168,132,232,.14), transparent 60%),
-      linear-gradient(180deg, var(--bg0), var(--bg1) 55%, var(--bg0));
-    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-    line-height:1.55;
+      radial-gradient(ellipse 800px 600px at 15% 0%, rgba(212,169,106,0.055) 0%, transparent 60%),
+      radial-gradient(ellipse 600px 500px at 85% 20%, rgba(139,111,190,0.045) 0%, transparent 60%),
+      radial-gradient(ellipse 900px 500px at 50% 100%, rgba(212,169,106,0.03) 0%, transparent 50%);
   }
 
-  a{color:inherit; text-decoration:none}
-  img{max-width:100%; display:block}
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
 
-  /* Layout */
-  .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
-  .section{padding:72px 0}
-  .section.tight{padding:44px 0}
-  .section .kicker{
-    display:inline-flex; gap:10px; align-items:center;
-    padding:10px 14px;
-    border:1px solid var(--line);
-    border-radius:999px;
-    background:rgba(255,255,255,.04);
-    color:var(--muted);
-    font-weight:600;
-    letter-spacing:.02em;
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(.16,1,.3,1), transform 0.75s cubic-bezier(.16,1,.3,1);
   }
-  .section h2{
-    margin:18px 0 14px;
-    font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-    font-size: clamp(34px, 4vw, 52px);
-    line-height:1.06;
-    letter-spacing:-.02em;
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ─── TOPBAR ─── */
+  .topbar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(4,2,11,0.75);
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    border-bottom: 1px solid var(--line2);
   }
-  .section p{
-    color:var(--muted);
-    margin:0 0 14px;
-    font-size: clamp(16px, 1.4vw, 18px);
+  .topbar-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 0;
+    gap: 16px;
   }
-  .lead{
-    max-width: 72ch;
-    font-size: clamp(17px, 1.6vw, 20px);
-    color:var(--muted);
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    color: var(--text);
+  }
+  .brand-icon {
+    width: 34px; height: 34px;
+    border: 1px solid rgba(212,169,106,0.3);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, rgba(212,169,106,0.12), rgba(212,169,106,0.04));
+    font-size: 16px;
+    color: var(--gold);
+    font-family: var(--font-display);
+  }
+  .nav-links {
+    display: flex; gap: 4px; align-items: center;
+  }
+  .nav-links a {
+    color: var(--muted2);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 10px;
+    transition: color 0.2s, background 0.2s;
+    letter-spacing: 0.01em;
+  }
+  .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+  @media (max-width: 840px) { .nav-links { display: none; } }
+
+  .currency-toggle {
+    display: flex; gap: 2px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 3px;
+  }
+  .cur-btn {
+    padding: 7px 13px;
+    border-radius: 9px;
+    border: none;
+    background: transparent;
+    color: var(--muted3);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .cur-btn[aria-pressed="true"] {
+    background: rgba(212,169,106,0.14);
+    border: 1px solid rgba(212,169,106,0.28);
+    color: var(--gold2);
+    box-shadow: 0 2px 12px rgba(212,169,106,0.1);
   }
 
-  /* Header */
-  .topbar{
-    position:sticky; top:0; z-index:50;
-    background: rgba(18,10,28,.72);
-    backdrop-filter: blur(10px);
-    border-bottom:1px solid rgba(200,166,255,.12);
+  .btn-nav {
+    display: inline-flex; align-items: center;
+    padding: 10px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(212,169,106,0.3);
+    background: linear-gradient(135deg, rgba(212,169,106,0.15), rgba(212,169,106,0.06));
+    color: var(--gold2);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: all 0.2s;
   }
-  .topbar .row{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:14px 0;
-  }
-  .brand{
-    display:flex; align-items:center; gap:12px;
-    font-weight:800;
-    letter-spacing:.02em;
-  }
-  .brand-badge{
-    width:36px; height:36px; border-radius:12px;
-    background: radial-gradient(circle at 30% 30%, rgba(255,214,255,.55), rgba(200,166,255,.18) 55%, rgba(0,0,0,.0));
-    border:1px solid rgba(200,166,255,.25);
-    box-shadow: 0 0 40px rgba(200,166,255,.22);
-  }
-  .nav{
-    display:flex; gap:18px; align-items:center;
-  }
-  .nav a{
-    color:var(--muted2);
-    font-weight:650;
-    font-size:14px;
-    padding:10px 10px;
-    border-radius:12px;
-    transition: all .2s ease;
-  }
-  .nav a:hover{color:var(--text); background: rgba(255,255,255,.04)}
-  @media (max-width: 860px){
-    .nav{display:none}
-  }
-
-  /* Buttons */
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center;
-    gap:10px;
-    padding:14px 18px;
-    border-radius: 16px;
-    border:1px solid rgba(200,166,255,.26);
-    font-weight:800;
-    letter-spacing:.01em;
-    transition: all .2s ease;
-    cursor:pointer;
-    user-select:none;
-    text-decoration:none;
-    box-shadow: var(--shadow2);
-  }
-  .btn.primary{
-    background:
-      radial-gradient(circle at 30% 20%, rgba(255,214,255,.65), rgba(200,166,255,.25) 40%, rgba(168,132,232,.14) 75%),
-      linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
-    color:var(--text);
-  }
-  .btn.primary:hover{
+  .btn-nav:hover {
+    background: linear-gradient(135deg, rgba(212,169,106,0.22), rgba(212,169,106,0.1));
     transform: translateY(-1px);
-    box-shadow: 0 18px 60px rgba(200,166,255,.18), var(--shadow);
+    box-shadow: 0 8px 24px rgba(212,169,106,0.12);
   }
-  .btn.ghost{
-    background: rgba(255,255,255,.04);
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 90px 0 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative sacred geometry background */
+  .hero-geo {
+    position: absolute;
+    right: -80px; top: -60px;
+    width: 640px; height: 640px;
+    opacity: 0.045;
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-geo { display: none; }
+  }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid rgba(212,169,106,0.2);
+    border-radius: 999px;
+    background: rgba(212,169,106,0.06);
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 999px;
+    background: var(--gold);
+    opacity: 0.8;
+    box-shadow: 0 0 8px rgba(212,169,106,0.8);
+  }
+
+  .hero h1 {
+    margin: 0 0 22px;
+    font-family: var(--font-display);
+    font-size: clamp(52px, 6vw, 80px);
+    font-weight: 500;
+    line-height: 0.96;
+    letter-spacing: -0.02em;
     color: var(--text);
   }
-  .btn.ghost:hover{transform: translateY(-1px); background: rgba(255,255,255,.06)}
-  .btn.small{padding:10px 14px; border-radius:14px; font-size:14px}
-
-  /* Hero */
-  .hero{
-    padding: 70px 0 40px;
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold2);
+    font-weight: 300;
   }
-  .hero-grid{
-    display:grid;
-    grid-template-columns: 1.15fr .85fr;
-    gap:28px;
-    align-items:center;
-  }
-  @media (max-width: 980px){
-    .hero-grid{grid-template-columns:1fr; gap:22px}
-  }
-  .hero h1{
-    margin:14px 0 10px;
-    font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-    font-size: clamp(44px, 5.2vw, 72px);
-    line-height:.98;
-    letter-spacing:-.03em;
-  }
-  .hero .sub{
-    margin: 0 0 18px;
-    max-width: 62ch;
+  .hero-sub {
+    margin: 0 0 32px;
+    max-width: 54ch;
     color: var(--muted);
-    font-size: clamp(17px, 1.6vw, 20px);
+    font-size: clamp(16px, 1.6vw, 18px);
+    font-weight: 400;
+    line-height: 1.65;
   }
-  .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px}
-  .microproof{
-    display:flex; gap:10px; align-items:flex-start;
-    margin-top: 18px;
-    color: var(--muted2);
-    border-left: 2px solid rgba(200,166,255,.35);
-    padding-left: 14px;
-  }
-  .microproof b{color:var(--text)}
-  .hero-card{
-    border-radius: var(--radius2);
-    background:
-      radial-gradient(500px 300px at 20% 10%, rgba(200,166,255,.18), transparent 55%),
-      linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-    border:1px solid rgba(200,166,255,.16);
-    box-shadow: var(--shadow);
-    overflow:hidden;
-    position:relative;
-  }
-  .hero-card .inner{padding:18px}
-  .hero-card .label{
-    display:flex; justify-content:space-between; align-items:center;
-    color: var(--muted2);
-    font-weight:700; font-size:13px;
-    padding:12px 16px;
-    border-bottom:1px solid rgba(200,166,255,.14);
-    background: rgba(0,0,0,.10);
-  }
-  .hero-img{
-    padding: 10px 18px 18px;
-  }
-  .hero-img img{
-    border-radius: 18px;
-    width:100%;
-    box-shadow: 0 25px 70px rgba(200,166,255,.14);
-    filter: drop-shadow(0 0 60px rgba(200,166,255,.16));
-  }
+  .hero-sub strong { color: var(--text); font-weight: 500; }
 
-  /* Cards grid */
-  .grid3{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:18px;
-    margin-top: 22px;
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 26px;
+    border-radius: 14px;
+    border: 1px solid rgba(212,169,106,0.4);
+    background: linear-gradient(135deg, rgba(212,169,106,0.22) 0%, rgba(212,169,106,0.08) 60%);
+    color: var(--gold2);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(.16,1,.3,1);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
   }
-  @media (max-width: 980px){ .grid3{grid-template-columns:1fr} }
-  .card{
-    padding: 22px;
-    border-radius: var(--radius);
-    border: 1px solid rgba(200,166,255,.16);
-    background:
-      radial-gradient(600px 400px at 20% 0%, rgba(255,214,255,.10), transparent 50%),
-      linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-    box-shadow: var(--shadow2);
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.06) 50%, transparent 60%);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
   }
-  .card h3{
-    margin: 6px 0 8px;
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 40px rgba(212,169,106,0.16), 0 0 0 1px rgba(212,169,106,0.3); }
+  .btn-primary:hover::after { transform: translateX(100%); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 16px 22px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .btn-ghost:hover { color: var(--text); background: rgba(255,255,255,0.06); transform: translateY(-1px); }
+
+  .testimonial-strip {
+    padding: 18px 20px;
+    border-left: 2px solid rgba(212,169,106,0.3);
+    background: rgba(212,169,106,0.04);
+    border-radius: 0 12px 12px 0;
+    max-width: 52ch;
+  }
+  .testimonial-strip blockquote {
+    margin: 0 0 6px;
+    font-family: var(--font-display);
+    font-style: italic;
     font-size: 18px;
-    letter-spacing:-.01em;
+    font-weight: 400;
+    color: var(--gold2);
+    line-height: 1.4;
   }
-  .card p{margin:0; color: var(--muted2)}
-  .chip{
-    display:inline-flex; align-items:center; gap:8px;
-    padding:10px 12px;
-    border:1px solid rgba(200,166,255,.18);
-    border-radius:999px;
-    background: rgba(0,0,0,.12);
-    color: var(--muted);
-    font-weight:700;
-    font-size:13px;
+  .testimonial-strip cite {
+    font-size: 13px;
+    color: var(--muted3);
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.03em;
   }
 
-  /* Plans */
-  .plans{display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-top:22px}
-  @media (max-width: 980px){ .plans{grid-template-columns:1fr} }
-  .plan{
-    padding: 24px;
+  /* Hero visual card */
+  .hero-visual {
+    position: relative;
+  }
+  .hero-card {
     border-radius: var(--radius2);
-    border: 1px solid rgba(200,166,255,.18);
-    background:
-      radial-gradient(700px 420px at 30% 0%, rgba(200,166,255,.14), transparent 55%),
-      linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-    box-shadow: var(--shadow);
-    position:relative;
-    overflow:hidden;
+    border: 1px solid var(--card-border);
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    overflow: hidden;
+    box-shadow: var(--shadow), var(--glow);
+    position: relative;
   }
-  .plan.featured{
-    border-color: rgba(255,214,255,.35);
-    box-shadow: 0 30px 90px rgba(200,166,255,.18), var(--shadow);
-    transform: translateY(-4px);
+  .hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,169,106,0.4), transparent);
   }
-  .plan .tag{
-    position:absolute; top:16px; right:16px;
-    padding:8px 10px;
-    border-radius:999px;
-    background: rgba(255,214,255,.12);
-    border:1px solid rgba(255,214,255,.26);
-    font-weight:800; font-size:12px;
+  .card-label {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line2);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted3);
+  }
+  .card-dot {
+    width: 6px; height: 6px;
+    border-radius: 999px;
+    background: var(--gold);
+    box-shadow: 0 0 8px var(--gold);
+    animation: pulse-dot 2.5s ease-in-out infinite;
+  }
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  .hero-img {
+    padding: 16px 18px 10px;
+  }
+  .hero-img img {
+    border-radius: 16px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .card-chips {
+    padding: 14px 18px 18px;
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .chip {
+    padding: 7px 13px;
+    border: 1px solid rgba(212,169,106,0.16);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--muted2);
+    background: rgba(212,169,106,0.04);
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    position: relative;
+    padding: 0;
+    height: 1px;
+    margin: 0 auto;
+    max-width: var(--max);
+  }
+  .divider::after {
+    content: '';
+    position: absolute;
+    left: 24px; right: 24px; top: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line), transparent);
+  }
+
+  /* ─── SECTIONS ─── */
+  .section { padding: 96px 0; }
+  .section.tight { padding: 64px 0; }
+
+  .section-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .section-eyebrow::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+
+  .section h2 {
+    margin: 0 0 16px;
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 500;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
     color: var(--text);
   }
-  .plan h3{margin:0 0 6px; font-size:20px}
-  .price{
-    margin: 10px 0 14px;
-    font-size: 34px;
-    font-weight: 900;
-    letter-spacing:-.02em;
-    font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-  }
-  .price small{font-size:14px; font-weight:800; color:var(--muted2)}
-  .list{margin: 0 0 18px; padding:0; list-style:none}
-  .list li{
-    display:flex; gap:10px; align-items:flex-start;
-    margin: 10px 0;
+  .section h2 em { font-style: italic; font-weight: 300; color: var(--gold2); }
+
+  .section-lead {
+    max-width: 64ch;
     color: var(--muted);
+    font-size: clamp(16px, 1.5vw, 18px);
+    line-height: 1.7;
+    margin: 0 0 40px;
   }
-  .dot{
-    width:10px; height:10px; border-radius:999px; margin-top:7px;
-    background: radial-gradient(circle at 30% 30%, rgba(255,214,255,.95), rgba(200,166,255,.35));
-    box-shadow: 0 0 18px rgba(200,166,255,.30);
+
+  /* Two-col layout for visual sections */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .two-col.reverse { direction: rtl; }
+  .two-col.reverse > * { direction: ltr; }
+  @media (max-width: 840px) {
+    .two-col { grid-template-columns: 1fr; gap: 36px; }
+    .two-col.reverse { direction: ltr; }
+  }
+
+  /* ─── CARDS ─── */
+  .card {
+    padding: 28px;
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    background: var(--card);
+    backdrop-filter: blur(8px);
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,169,106,0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .card:hover { border-color: rgba(212,169,106,0.2); background: var(--card-hover); }
+  .card:hover::before { opacity: 1; }
+  .card h3 {
+    margin: 0 0 10px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
+
+  .card-number {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    opacity: 0.8;
+  }
+
+  .grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  @media (max-width: 840px) { .grid3 { grid-template-columns: 1fr; } }
+
+  /* ─── PROCESS STEPS (numbered with vertical line) ─── */
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 32px;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    left: 19px; top: 40px; bottom: 40px;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(212,169,106,0.3), rgba(212,169,106,0.08));
+  }
+  .step {
+    display: flex; gap: 24px;
+    padding: 20px 0;
+    position: relative;
+  }
+  .step-num {
+    flex: 0 0 40px;
+    width: 40px; height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(212,169,106,0.3);
+    background: rgba(212,169,106,0.08);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gold);
+    position: relative; z-index: 1;
+  }
+  .step-body h3 {
+    margin: 0 0 6px;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .step-body p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* ─── PLANS ─── */
+  .plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+    align-items: start;
+  }
+  @media (max-width: 840px) { .plans { grid-template-columns: 1fr; } }
+
+  .plan {
+    padding: 28px 26px 26px;
+    border-radius: var(--radius2);
+    border: 1px solid var(--card-border);
+    background: var(--card);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  }
+  .plan::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,169,106,0.2), transparent);
+  }
+  .plan:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,0.4); }
+
+  .plan.featured {
+    border-color: rgba(212,169,106,0.28);
+    background: linear-gradient(160deg, rgba(212,169,106,0.08) 0%, rgba(212,169,106,0.02) 60%, transparent);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow), 0 0 60px rgba(212,169,106,0.07);
+  }
+  .plan.featured::before {
+    background: linear-gradient(90deg, transparent, rgba(212,169,106,0.4), transparent);
+  }
+  .plan.featured:hover { transform: translateY(-10px); }
+
+  .plan-badge {
+    position: absolute; top: 18px; right: 18px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: rgba(212,169,106,0.14);
+    border: 1px solid rgba(212,169,106,0.28);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold2);
+  }
+
+  .plan-name {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted3);
+    margin: 0 0 12px;
+  }
+  .plan-price {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1;
+    margin: 0 0 4px;
+  }
+  .plan-currency {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted3);
+    letter-spacing: 0.04em;
+  }
+  .plan-divider {
+    height: 1px;
+    background: var(--line2);
+    margin: 20px 0;
+  }
+  .plan ul {
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+  }
+  .plan ul li {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 9px 0;
+    color: var(--muted);
+    font-size: 14px;
+    border-bottom: 1px solid rgba(212,169,106,0.04);
+  }
+  .plan ul li:last-child { border-bottom: none; }
+  .plan ul li::before {
+    content: '';
+    flex: 0 0 5px;
+    width: 5px; height: 5px;
+    border-radius: 999px;
+    background: var(--gold);
+    opacity: 0.6;
+    margin-top: 7px;
+    box-shadow: 0 0 6px rgba(212,169,106,0.4);
+  }
+
+  .btn-plan-primary {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%;
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid rgba(212,169,106,0.4);
+    background: linear-gradient(135deg, rgba(212,169,106,0.2), rgba(212,169,106,0.07));
+    color: var(--gold2);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-plan-primary:hover { background: linear-gradient(135deg, rgba(212,169,106,0.28), rgba(212,169,106,0.12)); transform: translateY(-1px); box-shadow: 0 12px 30px rgba(212,169,106,0.12); }
+
+  .btn-plan-ghost {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%;
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .btn-plan-ghost:hover { color: var(--text); background: rgba(255,255,255,0.06); transform: translateY(-1px); }
+
+  /* ─── NOTICE CARDS ─── */
+  .notice {
+    margin-top: 16px;
+    padding: 22px 24px;
+    border-radius: var(--radius);
+    border: 1px solid var(--line2);
+    background: rgba(255,255,255,0.02);
+  }
+  .notice h4 {
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .notice p { margin: 0; color: var(--muted2); font-size: 14px; line-height: 1.6; }
+  .notice p + p { margin-top: 10px; }
+  .notice a { color: var(--gold2); font-weight: 600; }
+
+  /* ─── FAQ ACCORDION ─── */
+  .faq-list { margin-top: 28px; }
+  details {
+    border-bottom: 1px solid var(--line2);
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  details:first-child { border-top: 1px solid var(--line2); }
+  summary {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 22px 4px;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '+';
+    font-family: var(--font-body);
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--gold);
+    opacity: 0.7;
+    transition: transform 0.3s;
     flex: 0 0 auto;
   }
-
-  /* Footer */
-  footer{
-    padding: 70px 0 90px;
-    border-top: 1px solid rgba(200,166,255,.12);
-    color: var(--muted2);
+  details[open] summary::after { transform: rotate(45deg); }
+  details[open] summary { color: var(--gold2); }
+  .faq-answer {
+    padding: 0 4px 20px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
   }
-  footer a{color:var(--text); font-weight:800}
 
-  /* Sticky CTA (mobile) */
-  .sticky-cta{
-    position:fixed; left:0; right:0; bottom:0; z-index:60;
-    padding: 12px 14px;
-    background: rgba(18,10,28,.78);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(200,166,255,.14);
-    display:none;
+  /* ─── PHILOSOPHY QUOTE ─── */
+  .philosophy {
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
   }
-  .sticky-cta .wrap{display:flex; justify-content:space-between; gap:12px; align-items:center}
-  .sticky-cta .hint{color:var(--muted2); font-weight:800; font-size:13px}
-  @media (max-width: 860px){ .sticky-cta{display:block} }
-.hero-img img{
-  border-radius: 18px;
-  width:100%;
-  box-shadow: 0 25px 70px rgba(200,166,255,.16);
-  filter: saturate(1.05) contrast(1.02);
-} 
+  .philosophy::before, .philosophy::after {
+    content: '';
+    position: absolute;
+    left: 50%; transform: translateX(-50%);
+    width: 200px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,169,106,0.3), transparent);
+  }
+  .philosophy::before { top: 0; }
+  .philosophy::after { bottom: 0; }
+  .philosophy blockquote {
+    margin: 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(26px, 3.5vw, 42px);
+    font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    max-width: 700px;
+    margin: 0 auto 20px;
+  }
+  .philosophy blockquote em { color: var(--gold2); font-style: italic; }
+  .philosophy cite {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted3);
+  }
 
-.currency{
-  display:flex;
-  gap:8px;
-  padding:6px;
-  border-radius:999px;
-  border:1px solid rgba(200,166,255,.18);
-  background: rgba(0,0,0,.10);
-}
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 56px 0 80px;
+    border-top: 1px solid var(--line2);
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 24px; flex-wrap: wrap;
+  }
+  .footer-brand {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .footer-sub { color: var(--muted3); font-size: 14px; }
+  .footer-links { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+  .footer-links a { color: var(--muted2); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold2); }
+  .footer-copy { color: var(--muted3); font-size: 13px; margin-top: 6px; }
 
-.cur-btn{
-  padding:10px 12px;
-  border-radius:999px;
-  border:1px solid transparent;
-  background: transparent;
-  color: var(--muted2);
-  font-weight:800;
-  font-size:13px;
-  cursor:pointer;
-}
+  /* ─── STICKY MOBILE CTA ─── */
+  .sticky-cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 99;
+    padding: 12px 20px;
+    background: rgba(4,2,11,0.85);
+    backdrop-filter: blur(18px);
+    border-top: 1px solid var(--line2);
+    display: none;
+  }
+  .sticky-cta-inner {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .sticky-cta-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+  .sticky-cta-text strong { color: var(--text); display: block; font-size: 15px; }
+  @media (max-width: 840px) { .sticky-cta { display: block; } }
+  </style>
 
-.cur-btn[aria-pressed="true"]{
-  background: rgba(255,255,255,.08);
-  border-color: rgba(255,214,255,.28);
-  color: var(--text);
-  box-shadow: 0 10px 30px rgba(200,166,255,.16);
-}
-
-</style>
-
-<!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-
-  ttq.load('D69GIQBC77UA1UK9FAL0');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
-<!-- TikTok Pixel Code End -->
-
-  
+  <!-- TikTok Pixel -->
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+  var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+  ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+    ttq.load('D69GIQBC77UA1UK9FAL0');
+    ttq.page();
+  }(window, document, 'ttq');
+  </script>
 </head>
 <body>
 
-  <!-- TOPBAR -->
+  <!-- ─── TOPBAR ─── -->
   <div class="topbar">
     <div class="wrap">
-      <div class="row">
+      <div class="topbar-inner">
         <div class="brand">
-          <span class="brand-badge" aria-hidden="true"></span>
-          <span> Alexandra · Kabbalah</span>
+          <div class="brand-icon">ב</div>
+          Alexandra · Kabbalah
         </div>
-
-        <div class="nav">
-          <a href="#como-funciona">Cómo funciona</a>
+        <nav class="nav-links">
+          <a href="#proceso">Proceso</a>
           <a href="#planes">Planes</a>
           <a href="#faq">FAQ</a>
+        </nav>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <div class="currency-toggle" aria-label="Moneda">
+            <button class="cur-btn" type="button" data-currency-btn="MXN" aria-pressed="true">MXN</button>
+            <button class="cur-btn" type="button" data-currency-btn="EUR" aria-pressed="false">EUR</button>
+          </div>
+          <a class="btn-nav" href="#planes">Ver planes</a>
         </div>
-
-        <div class="currency" aria-label="Moneda">
-  <button class="cur-btn" type="button" data-currency-btn="MXN" aria-pressed="true">MXN</button>
-  <button class="cur-btn" type="button" data-currency-btn="EUR" aria-pressed="false">EUR</button>
-</div>
-
-        <a class="btn primary small" href="#planes">Ver planes</a>
       </div>
     </div>
   </div>
 
-  <!-- HERO -->
+  <!-- ─── HERO ─── -->
   <section class="hero">
+    <!-- Sacred geometry decoration -->
+    <svg class="hero-geo" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="200" cy="200" r="190" stroke="#D4A96A" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="140" stroke="#D4A96A" stroke-width="0.5"/>
+      <circle cx="200" cy="200" r="90" stroke="#D4A96A" stroke-width="0.5"/>
+      <circle cx="200" cy="130" r="70" stroke="#D4A96A" stroke-width="0.4"/>
+      <circle cx="200" cy="270" r="70" stroke="#D4A96A" stroke-width="0.4"/>
+      <circle cx="140" cy="165" r="70" stroke="#D4A96A" stroke-width="0.4"/>
+      <circle cx="260" cy="165" r="70" stroke="#D4A96A" stroke-width="0.4"/>
+      <circle cx="140" cy="235" r="70" stroke="#D4A96A" stroke-width="0.4"/>
+      <circle cx="260" cy="235" r="70" stroke="#D4A96A" stroke-width="0.4"/>
+      <polygon points="200,60 330,280 70,280" stroke="#D4A96A" stroke-width="0.4" fill="none"/>
+      <polygon points="200,340 70,120 330,120" stroke="#D4A96A" stroke-width="0.4" fill="none"/>
+    </svg>
+
     <div class="wrap">
       <div class="hero-grid">
-
         <div>
-          <span class="kicker">Arquitectura espiritual aplicada</span>
-
-          <h1>No fue mala suerte.<br>Fue patrón.</h1>
-
-          <p class="sub">
-            Mapa cabalístico estructural para mujeres que están listas para dejar de repetir en el amor, ambición, 
-            sensibilidad, impulsividad.
-            No predigo tu destino. Te muestro <b>desde dónde estás decidiendo</b>.
+          <div class="eyebrow reveal">Arquitectura espiritual aplicada</div>
+          <h1 class="reveal reveal-delay-1">No fue<br>mala suerte.<br><em>Fue patrón.</em></h1>
+          <p class="hero-sub reveal reveal-delay-2">
+            Mapa cabalístico estructural para mujeres listas para dejar de repetir en el amor, la ambición y las decisiones.
+            No predigo tu destino — <strong>te muestro desde dónde estás eligiendo.</strong>
           </p>
-
-          <div class="cta-row">
-            <a class="btn primary" href="#planes">Ver mi patrón estructural</a>
-            <a class="btn ghost" href="#como-funciona">Qué es esto</a>
+          <div class="cta-row reveal reveal-delay-3">
+            <a class="btn-primary" href="#planes">Ver mi patrón estructural</a>
+            <a class="btn-ghost" href="#proceso">Cómo funciona</a>
           </div>
+          <div class="testimonial-strip reveal reveal-delay-4">
+            <blockquote>"Es demasiado acertado."</blockquote>
+            <cite>— Mujer, 32 · "Me explicó exactamente por qué repito y qué ajustar."</cite>
+          </div>
+        </div>
 
-          <div class="microproof">
-            <div>
-              <b>“Es demasiado acertado.”</b><br>
-              “Me explicó exactamente por qué repito y qué ajustar.”
-              <span style="opacity:.85">— Mujer, 32</span>
+        <div class="hero-visual reveal reveal-delay-2">
+          <div class="hero-card">
+            <div class="card-label">
+              <span>Geometría · Claridad · Estructura</span>
+              <span class="card-dot"></span>
+            </div>
+            <div class="hero-img">
+              <img src="./assets/img/hero-geometry.png?v=2" alt="Geometría sagrada cabalística" />
+            </div>
+            <div class="card-chips">
+              <span class="chip">No señales · Estructura</span>
+              <span class="chip">Decisión consciente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── VISUAL SECTION ─── -->
+  <section class="section tight" id="visual">
+    <div class="wrap">
+      <div class="two-col reverse">
+        <div>
+          <div class="section-eyebrow reveal">Visual</div>
+          <h2 class="reveal reveal-delay-1">Cuando la energía<br>se ordena, la decisión<br><em>se aclara.</em></h2>
+          <p class="section-lead reveal reveal-delay-2">
+            No se trata de señales. Se trata de estructura: ritmo, patrón y dirección.
+            Este mapa te muestra desde dónde estás eligiendo — para que dejes de repetir.
+          </p>
+          <div class="cta-row reveal reveal-delay-3">
+            <a class="btn-primary" href="#planes">Ver planes</a>
+            <a class="btn-ghost" href="#proceso">Cómo se entrega</a>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <div class="hero-card">
+            <div class="card-label">
+              <span>Luz · Cuarzos · Claridad</span>
+              <span class="card-dot"></span>
+            </div>
+            <div class="hero-img">
+              <img src="./assets/img/metatron-ocean.png" alt="Geometría sagrada con luz" />
+            </div>
+            <div class="card-chips">
+              <span class="chip">Orden</span>
+              <span class="chip">Dirección</span>
+              <span class="chip">Decisión</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── PHILOSOPHY ─── -->
+  <div class="wrap">
+    <div class="philosophy reveal">
+      <blockquote>
+        "La Kabbalah más antigua trabajaba con conciencia.<br>
+        Esto ordena <em>la estructura.</em>"
+      </blockquote>
+      <cite>Alexandra · Kabbalah</cite>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ─── PLANES ─── -->
+  <section class="section" id="planes">
+    <div class="wrap">
+      <div class="section-eyebrow reveal">Planes</div>
+      <h2 class="reveal reveal-delay-1">Elige tu nivel<br>de <em>claridad.</em></h2>
+      <p class="section-lead reveal reveal-delay-2">
+        Precios disponibles en MXN o EUR. El pago se abre en la moneda elegida.
+        El objetivo es el mismo: ver el patrón y cambiar tu forma de decidir.
+      </p>
+
+      <div class="plans">
+        <!-- Mapa Base -->
+        <div class="plan reveal">
+          <div class="plan-name">Mapa Base</div>
+          <div class="plan-price">
+            <span data-price data-mxn="$989" data-eur="€49">$989</span>
+          </div>
+          <div class="plan-currency"><small data-cur-label>MXN</small></div>
+          <div class="plan-divider"></div>
+          <ul>
+            <li>Perfil estructural completo (amor / propósito / paz / dinero)</li>
+            <li>Patrón principal que se repite</li>
+            <li>Recomendaciones claras para ordenar tu energía</li>
+          </ul>
+          <a class="btn-plan-ghost" href="#" data-checkout-key="basic">Elegir Mapa Base</a>
+        </div>
+
+        <!-- Integración (featured) -->
+        <div class="plan featured reveal reveal-delay-1">
+          <div class="plan-badge">Más elegido</div>
+          <div class="plan-name">Integración 30 días</div>
+          <div class="plan-price">
+            <span data-price data-mxn="$1,099" data-eur="€54">$1,099</span>
+          </div>
+          <div class="plan-currency"><small data-cur-label>MXN</small></div>
+          <div class="plan-divider"></div>
+          <ul>
+            <li>Todo lo del Mapa Base</li>
+            <li>Plan práctico de 30 días (estructura + acción)</li>
+            <li>Activación de cualidades (ciclos, talentos, retos)</li>
+          </ul>
+          <a class="btn-plan-primary" href="#" data-checkout-key="pro">Ordenar mi estructura</a>
+        </div>
+
+        <!-- Arquitectura Completa -->
+        <div class="plan reveal reveal-delay-2">
+          <div class="plan-name">Arquitectura Completa</div>
+          <div class="plan-price">
+            <span data-price data-mxn="$2,055" data-eur="€101">$2,055</span>
+          </div>
+          <div class="plan-currency"><small data-cur-label>MXN</small></div>
+          <div class="plan-divider"></div>
+          <ul>
+            <li>Nombre completo (letras + números)</li>
+            <li>Plan 90 días + 1 ajuste posterior</li>
+            <li>Audio personalizado (5–10 min)</li>
+          </ul>
+          <a class="btn-plan-ghost" href="#" data-checkout-key="premium">Rediseñar mi patrón</a>
+        </div>
+      </div>
+
+      <div class="notice reveal">
+        <h4>Nota importante</h4>
+        <p>Esto no es predicción ni terapia. Es un mapa estructural para decisiones más conscientes.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── PROCESO ─── -->
+  <section class="section" id="proceso">
+    <div class="wrap">
+      <div class="two-col">
+        <div>
+          <div class="section-eyebrow reveal">Proceso</div>
+          <h2 class="reveal reveal-delay-1">Cómo funciona<br>la <em>entrega.</em></h2>
+          <p class="section-lead reveal reveal-delay-2">
+            Diseñado para darte claridad con estructura — sin promesas mágicas.
+          </p>
+          <div class="process-steps">
+            <div class="step reveal reveal-delay-1">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h3>Elige tu plan</h3>
+                <p>Selecciona Mapa Base, Integración 30 días o Arquitectura Completa y completa tu pago de forma segura.</p>
+              </div>
+            </div>
+            <div class="step reveal reveal-delay-2">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h3>Envías tus datos</h3>
+                <p>Recibirás un email para enviar tu <strong style="color:var(--text)">nombre completo</strong> y <strong style="color:var(--text)">fecha de nacimiento</strong>, más el enfoque que quieras trabajar. Si no lo ves, revisa spam / promociones.</p>
+              </div>
+            </div>
+            <div class="step reveal reveal-delay-3">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h3>Recibes tu mapa</h3>
+                <p>Tu lectura llega en PDF a tu correo en <strong style="color:var(--text)">2 días hábiles.</strong></p>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="hero-card">
-          <div class="label">
-            <span>Geometría · Claridad · Estructura</span>
+        <div>
+          <div class="notice reveal" style="margin-top:0">
+            <h4>Contacto</h4>
+            <p>Si te equivocaste en tus datos o necesitas soporte:<br>
+              <a href="mailto:alexandra.kabbalah@outlook.com">alexandra.kabbalah@outlook.com</a>
+            </p>
           </div>
-          <div class="hero-img">
-            <!-- Cambia este src a tu imagen -->
-          <img src="./assets/img/hero-geometry.png?v=2" alt="Geometría sagrada cabalística" />
-          </div>
-          <div class="inner" style="padding-top:0">
-            <span class="chip">No señales · Estructura</span>
-            <span class="chip" style="margin-left:8px">Decisión consciente</span>
+          <div class="notice reveal reveal-delay-1" style="margin-top:16px">
+            <h4>Aviso importante</h4>
+            <p>Este contenido es educativo y de desarrollo personal. <strong style="color:var(--text)">No sustituye terapia</strong>, atención psicológica, psiquiátrica, médica ni asesoría legal o financiera. Si estás en una situación delicada, busca ayuda profesional.</p>
+            <p><strong style="color:var(--text)">No hay reembolsos.</strong> Al tratarse de un servicio personalizado y entrega digital, todas las ventas son finales.</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- SECCIÓN: PROBLEMA -->
-  <section class="section tight" id="visual">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <span class="kicker">Visual</span>
-        <h2>Cuando la energía se ordena, la decisión se aclara.</h2>
-        <p class="lead">
-          No se trata de “señales”. Se trata de estructura: ritmo, patrón y dirección.
-          Este mapa te muestra desde dónde estás eligiendo — para que dejes de repetir.
-        </p>
-        <div class="cta-row">
-          <a class="btn primary" href="#planes">Ver planes</a>
-          <a class="btn ghost" href="#proceso">Cómo se entrega</a>
-        </div>
-      </div>
+  <div class="divider"></div>
 
-      <div class="hero-card">
-        <div class="label">
-          <span>Luz · Cuarzos · Claridad</span>
-        </div>
-        <div class="hero-img">
-        <img src="./assets/img/metatron-ocean.png" alt="Luz angelical con geometría sagrada" />
-        </div>
-        <div class="inner" style="padding-top:0">
-          <span class="chip">Orden</span>
-          <span class="chip" style="margin-left:8px">Dirección</span>
-          <span class="chip" style="margin-left:8px">Decisión</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-   <!-- PLANES -->
-  <section class="section" id="planes">
-  <div class="wrap">
-    <span class="kicker">Planes</span>
-    <h2>Elige tu nivel de claridad.</h2>
-    <p class="lead">Puedes ver precios en MXN o EUR. El pago se abre en la moneda elegida. El objetivo es el mismo: ver el patrón y cambiar tu forma de decidir.</p>
-
-    <div class="plans">
-
-      <div class="plan">
-        <h3>Mapa Base</h3>
-
-        <div class="price">
-          <span data-price data-mxn="$989" data-eur="€48.51">$989</span>
-          <small data-cur-label>MXN</small>
-        </div>
-
-        <ul class="list">
-          <li><span class="dot"></span>Perfil estructural + enfoque (amor / propósito / paz / dinero)</li>
-          <li><span class="dot"></span>Patrón principal que se repite</li>
-          <li><span class="dot"></span>Recomendaciones claras para ordenar tu energía</li>
-        </ul>
-
-        <a class="btn ghost" href="#" data-checkout-key="basic">Elegir Mapa Base</a>
-      </div>
-
-      <div class="plan featured">
-        <div class="tag">Más elegido</div>
-        <h3>Integración 30 días</h3>
-
-        <div class="price">
-          <span data-price data-mxn="$1,099" data-eur="€53.94">$1,099</span>
-          <small data-cur-label>MXN</small>
-        </div>
-
-        <ul class="list">
-          <li><span class="dot"></span>Todo lo del Mapa Base</li>
-          <li><span class="dot"></span>Plan práctico de 30 días (estructura + acción)</li>
-          <li><span class="dot"></span>Activación de cualidades (ciclos, talentos, retos)</li>
-        </ul>
-
-        <a class="btn primary" href="#" data-checkout-key="pro">Ordenar mi estructura</a>
-      </div>
-
-      <div class="plan">
-        <h3>Arquitectura Completa</h3>
-
-        <div class="price">
-          <span data-price data-mxn="$2,055" data-eur="€100.87">$2,055</span>
-          <small data-cur-label>MXN</small>
-        </div>
-
-        <ul class="list">
-          <li><span class="dot"></span>Incluye nombre completo (letras + números)</li>
-          <li><span class="dot"></span>Plan 90 días + 1 ajuste posterior</li>
-          <li><span class="dot"></span>Audio personalizado (5–10 min)</li>
-        </ul>
-
-        <a class="btn ghost" href="#" data-checkout-key="premium">Rediseñar mi patrón</a>
-      </div>
-
-    </div>
-
-    <div class="card" style="margin-top:18px">
-      <h3 style="margin-top:0">Nota importante</h3>
-      <p style="margin:0">
-        Esto no es predicción ni terapia. Es un mapa estructural para decisiones más conscientes.
-      </p>
-    </div>
-  </div>
-</section>
-
-  <section class="section" id="proceso">
-  <div class="wrap">
-    <span class="kicker">Proceso</span>
-    <h2>Cómo funciona la entrega</h2>
-    <p class="lead">
-      Este proceso está diseñado para darte claridad con estructura — sin promesas mágicas.
-    </p>
-
-    <div class="grid3">
-      <div class="card">
-        <span class="chip">1) Compra</span>
-        <h3>Elige tu plan</h3>
-        <p>Selecciona Mapa Base, Integración 30 días o Arquitectura Completa y completa tu pago.</p>
-      </div>
-
-      <div class="card">
-        <span class="chip">2) Datos</span>
-        <h3>Recibes un email para enviar tu información</h3>
-        <p>
-          Te pediré tu <b>nombre completo</b> y <b>fecha de nacimiento</b> (y el enfoque: amor / propósito / paz / dinero).
-          Si no lo ves en tu bandeja, revisa <b>spam/promociones</b>.
-        </p>
-      </div>
-
-      <div class="card">
-        <span class="chip">3) Entrega</span>
-        <h3>Te lo envío por email</h3>
-        <p>
-          Recibirás tu numerología/plan en PDF al correo que indiques. (Tiempo de entrega: <b>2 días hábiles</b>)
-        </p>
-      </div>
-    </div>
-
-    <div class="card" style="margin-top:18px">
-      <h3 style="margin-top:0">Contacto</h3>
-      <p style="margin:0">
-        Si te equivocaste en tus datos o necesitas soporte, escribe a:
-        <b><a href="mailto:alexandra.kabbalah@outlook.com">alexandra.kabbalah@outlook.com</a></b>
-      </p>
-    </div>
-
-    <div class="card" style="margin-top:18px">
-      <h3 style="margin-top:0">Aviso importante</h3>
-      <p style="margin:0; color: var(--muted);">
-        Este contenido es educativo y de desarrollo personal. <b>No sustituye terapia</b>, ni atención psicológica,
-        psiquiátrica o médica, ni asesoría legal o financiera. Si estás en una situación delicada, busca ayuda profesional.
-      </p>
-      <p style="margin:12px 0 0; color: var(--muted);">
-        <b>No hay reembolsos.</b> Al tratarse de un servicio personalizado (y/o entrega digital), todas las ventas son finales.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-  <!-- SECCIÓN: QUÉ ES -->
-  <section class="section">
-    <div class="wrap">
-      <span class="kicker">Qué es esto realmente</span>
-      <h2>La Kabbalah más antigua trabajaba con conciencia. Esto ordena la estructura.</h2>
-      <p class="lead">
-        La numerología cabalística nace para ordenar la experiencia profunda:
-        muestra cómo estás construida <b>antes</b> de intentar elevarte.
-      </p>
-      <p>
-        Tu fecha revela ritmos. Tu nombre revela cualidades. El año y el mes muestran activaciones.
-        Cuando todo se combina, aparece un patrón claro.
-      </p>
-
-      <div class="card" style="margin-top:22px">
-        <h3 style="margin-top:0">Esto no está diseñado para consolarte. Está diseñado para revelarte.</h3>
-        <p style="margin:0">
-          Si no reconoces tu patrón, lo volverás a elegir. Y sí: se puede ordenar.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  
-  <!-- FAQ -->
+  <!-- ─── FAQ ─── -->
   <section class="section" id="faq">
-    <div class="wrap">
-      <span class="kicker">FAQ</span>
-      <h2>Preguntas rápidas</h2>
-
-      <div class="grid3">
-        <div class="card">
-          <h3>¿Me vas a decir qué hacer?</h3>
-          <p>No. Te muestro desde dónde estás decidiendo y qué ajustes estructurales te ayudan a elegir mejor.</p>
-        </div>
-        <div class="card">
-          <h3>¿Sirve si estoy en ruptura?</h3>
-          <p>Sí. De hecho es cuando más claridad necesitas: entender qué pasó y no repetir el patrón.</p>
-        </div>
-        <div class="card">
-          <h3>¿Cuándo lo recibo?</h3>
-          <p>Lo entregas según tu proceso (ej. 2 días hábiles). Mantén eso igual en tu web/Stripe.</p>
-        </div>
+    <div class="wrap" style="max-width:720px">
+      <div class="section-eyebrow reveal">FAQ</div>
+      <h2 class="reveal reveal-delay-1">Preguntas<br><em>frecuentes.</em></h2>
+      <div class="faq-list reveal reveal-delay-2">
+        <details>
+          <summary>¿Me vas a decir qué hacer?</summary>
+          <div class="faq-answer">No. Te muestro desde dónde estás decidiendo y qué ajustes estructurales te ayudan a elegir mejor. La decisión siempre es tuya.</div>
+        </details>
+        <details>
+          <summary>¿Sirve si estoy en una ruptura?</summary>
+          <div class="faq-answer">Sí. De hecho es cuando más claridad necesitas: entender qué pasó en tu patrón y cómo no repetirlo en la próxima relación o decisión importante.</div>
+        </details>
+        <details>
+          <summary>¿Cuándo recibo mi lectura?</summary>
+          <div class="faq-answer">En 2 días hábiles desde que recibo tus datos completos. Te llegará directamente al correo que indiques.</div>
+        </details>
+        <details>
+          <summary>¿Necesito saber algo de Kabbalah o numerología?</summary>
+          <div class="faq-answer">Para nada. El mapa se entrega en lenguaje claro, sin términos esotéricos difíciles. Está diseñado para que lo entiendas y lo apliques de inmediato.</div>
+        </details>
+        <details>
+          <summary>¿Cuál plan me recomiendas?</summary>
+          <div class="faq-answer">La Integración 30 días es la más elegida porque combina el diagnóstico estructural con un plan de acción concreto. Si es tu primera lectura, empieza ahí.</div>
+        </details>
       </div>
     </div>
   </section>
 
+  <!-- ─── FOOTER ─── -->
   <footer>
     <div class="wrap">
-      <div style="display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap">
+      <div class="footer-inner">
         <div>
-          <b>Alexandra · Kabbalah</b><br>
-          <span style="opacity:.9">Claridad estructural para decidir con dirección.</span>
+          <div class="footer-brand">Alexandra · Kabbalah</div>
+          <div class="footer-sub">Claridad estructural para decidir con dirección.</div>
+          <div class="footer-copy" style="margin-top:12px">© 2025 · Todos los derechos reservados</div>
         </div>
-        <div>
+        <div class="footer-links">
           <a href="#planes">Ver planes</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#faq">FAQ</a>
+          <a href="mailto:alexandra.kabbalah@outlook.com">Contacto</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- Sticky CTA (mobile) -->
+  <!-- Sticky CTA Mobile -->
   <div class="sticky-cta">
-    <div class="wrap">
-      <div class="hint">Lista para ver tu patrón?</div>
-      <a class="btn primary" href="#planes">Ver planes</a>
+    <div class="sticky-cta-inner">
+      <div class="sticky-cta-text">
+        <strong>¿Lista para ver tu patrón?</strong>
+        Desde $989 MXN
+      </div>
+      <a class="btn-primary" href="#planes" style="white-space:nowrap; font-size:14px; padding:13px 20px;">Ver planes</a>
     </div>
   </div>
 
-  <!-- Script mínimo: enviar a Stripe -->
- <script>
+  <script>
+  // ─── STRIPE CONFIG ───
   const SITE_CONFIG = {
     STRIPE_LINKS: {
       basic:   { MXN: "https://buy.stripe.com/eVq14o4CL8e5actb7q28804", EUR: "https://buy.stripe.com/7sY14o1qz2TLckBb7q28807" },
@@ -702,102 +1193,68 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
     }
   };
 
-  // ---------- Currency ----------
+  // ─── CURRENCY ───
   let CURRENCY = localStorage.getItem("currency") || "MXN";
 
-  function setCurrency(cur){
+  function setCurrency(cur) {
     CURRENCY = (cur === "EUR") ? "EUR" : "MXN";
     localStorage.setItem("currency", CURRENCY);
-
-    // UI: estado del toggle
     document.querySelectorAll("[data-currency-btn]").forEach(b => {
-      b.setAttribute(
-        "aria-pressed",
-        b.getAttribute("data-currency-btn") === CURRENCY ? "true" : "false"
-      );
+      b.setAttribute("aria-pressed", b.getAttribute("data-currency-btn") === CURRENCY ? "true" : "false");
     });
-
-    // UI: actualizar precios visibles y label (manteniendo tu diseño)
     document.querySelectorAll("[data-price]").forEach(el => {
-      const mxn = el.getAttribute("data-mxn") || "";
-      const eur = el.getAttribute("data-eur") || "";
-      el.textContent = (CURRENCY === "EUR" ? eur : mxn);
+      el.textContent = CURRENCY === "EUR" ? el.getAttribute("data-eur") : el.getAttribute("data-mxn");
     });
-
     document.querySelectorAll("[data-cur-label]").forEach(el => {
       el.textContent = CURRENCY;
     });
   }
 
-  // Init currency UI
   setCurrency(CURRENCY);
 
-  // Toggle listeners
   document.querySelectorAll("[data-currency-btn]").forEach(b => {
-    b.addEventListener("click", () => {
-      setCurrency(b.getAttribute("data-currency-btn") || "MXN");
-    });
+    b.addEventListener("click", () => setCurrency(b.getAttribute("data-currency-btn") || "MXN"));
   });
 
-  // ---------- TikTok: ViewContent when #planes is visible (once) ----------
+  // ─── SCROLL REVEAL ───
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObs.observe(el));
+
+  // ─── TIKTOK: ViewContent on #planes ───
   (() => {
-    const plans = document.querySelector("#planes"); // OJO: tu section debe ser id="planes"
+    const plans = document.querySelector("#planes");
     if (!plans) return;
-
     let fired = false;
-
     const obs = new IntersectionObserver((entries) => {
       if (fired) return;
       if (entries.some(e => e.isIntersecting)) {
         fired = true;
-
         if (window.ttq && typeof window.ttq.track === "function") {
-          ttq.track("ViewContent", {
-            content_name: "Planes",
-            content_id: "planes",
-            content_type: "product_group"
-          });
+          ttq.track("ViewContent", { content_name: "Planes", content_id: "planes", content_type: "product_group" });
         }
-
         obs.disconnect();
       }
     }, { threshold: 0.25 });
-
     obs.observe(plans);
   })();
 
-  // ---------- Checkout (click on plan buttons) ----------
+  // ─── CHECKOUT ───
   document.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-checkout-key]");
     if (!btn) return;
-
     e.preventDefault();
-
-    const key = btn.getAttribute("data-checkout-key"); // basic | pro | premium
-    const url =
-      SITE_CONFIG.STRIPE_LINKS?.[key]?.[CURRENCY] ||
-      SITE_CONFIG.STRIPE_LINKS?.[key]?.MXN;
-
-    if (!url) {
-      alert("Falta el link de Stripe para: " + key + " (" + CURRENCY + ")");
-      return;
-    }
-
-    // TikTok: InitiateCheckout on click (recommended)
+    const key = btn.getAttribute("data-checkout-key");
+    const url = SITE_CONFIG.STRIPE_LINKS?.[key]?.[CURRENCY] || SITE_CONFIG.STRIPE_LINKS?.[key]?.MXN;
+    if (!url) { alert("Falta el link de Stripe para: " + key + " (" + CURRENCY + ")"); return; }
     if (window.ttq && typeof window.ttq.track === "function") {
-      ttq.track("InitiateCheckout", {
-        content_id: key,
-        content_name: "Alexandra - " + key,
-        currency: CURRENCY
-      });
+      ttq.track("InitiateCheckout", { content_id: key, content_name: "Alexandra - " + key, currency: CURRENCY });
     }
-
-    // give pixel a moment to send before redirect
-    setTimeout(() => {
-      window.location.href = url;
-    }, 150);
+    setTimeout(() => { window.location.href = url; }, 150);
   });
-</script>
+  </script>
 
 </body>
 </html>
